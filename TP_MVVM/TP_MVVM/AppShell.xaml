@@ -6,9 +6,22 @@
     xmlns:local="clr-namespace:TP_MVVM"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+   
+    <TabBar>
+
+        <ShellContent Title="My library" Icon="books_vertical.png" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"></ShellContent>
+
+        <Tab Title="My Lists" Icon="list_books.png">
+            <ShellContent Title="Modifier" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+
+        <Tab Title="My Library" Icon="books_vertical_fill.png">
+            <ShellContent Title="Modifier" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+
+        <Tab Title="My Library" Icon="books_vertical_fill.png">
+            <ShellContent Title="Modifier" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+    </TabBar>
 
 </Shell>
