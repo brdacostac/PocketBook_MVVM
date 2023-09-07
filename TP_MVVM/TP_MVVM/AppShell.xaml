@@ -3,24 +3,26 @@
     x:Class="TP_MVVM.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TP_MVVM"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:TP_MVVM.View"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
 
-   
     <TabBar>
 
-        <ShellContent Title="My library" Icon="books_vertical.png" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"></ShellContent>
+        <Tab Title="My Library" Icon="books_vertical.png">
+            <ShellContent  Icon="books_vertical.png" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"></ShellContent>
+        </Tab>
 
         <Tab Title="My Lists" Icon="list_books.png">
-            <ShellContent Title="Modifier" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
         </Tab>
 
-        <Tab Title="My Library" Icon="books_vertical_fill.png">
-            <ShellContent Title="Modifier" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <Tab Title="My Readings" Icon="bookmark_fill.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
         </Tab>
 
-        <Tab Title="My Library" Icon="books_vertical_fill.png">
-            <ShellContent Title="Modifier" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <Tab Title="Search" Icon="magnifyingglass.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
         </Tab>
     </TabBar>
 
