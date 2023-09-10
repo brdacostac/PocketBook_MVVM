@@ -19,21 +19,27 @@
                     HorizontalOptions="Start"
                     FontAttributes="Bold"/>
 
-                <ListView Grid.Row="2">
+                <ListView x:Name="listView" Grid.Row="2">
 
-                    <ListView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Item 1</x:String>
-                            <x:String>Item 2</x:String>
-                            <x:String>Item 3</x:String>
-                            <x:String>Item 4</x:String>
-                            <x:String>Item 5</x:String>
-                            <x:String>Item 6</x:String>
-                        </x:Array>
-                    </ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Image Source="{Binding IconPath}" WidthRequest="24" HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="0,0,15,0" />
+
+                                    <Label Text="{Binding Text}" FontSize="15" VerticalOptions="CenterAndExpand" />
+
+                                    <Label Text="{Binding CountBook}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+
+                                    <Image Source="chevron_right.png" Style="{StaticResource ColoredIconStyle}" VerticalOptions="CenterAndExpand" Margin="5,0,0,0" />
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
 
                 </ListView>
-
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

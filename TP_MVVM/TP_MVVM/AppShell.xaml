@@ -9,7 +9,7 @@
 
     <TabBar>
 
-        <Tab Title="My Library" Icon="books_vertical.png">
+        <Tab Title="My Library" Icon="books_vertical_fill.png">
             <ShellContent  Icon="books_vertical.png" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"></ShellContent>
         </Tab>
 
