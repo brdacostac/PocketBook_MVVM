@@ -19,8 +19,16 @@
             new { IconPath = "Resources/Images/tag_fill.png", Text = "Étiquettes", CountBook = "" }
         };
 
-            
+            var items2 = new List<object>
+        {
+            new { IconPath = "Resources/Images/person_fill.png", Text = "Auteur" },
+            new { IconPath = "Resources/Images/calendar.png", Text = "Date de publication" },
+            new { IconPath = "Resources/Images/sparkles.png", Text = "Note" },
+        };
+
+
             listView.ItemsSource = items;
+            listView2.ItemsSource = items2;
         }
 
     }

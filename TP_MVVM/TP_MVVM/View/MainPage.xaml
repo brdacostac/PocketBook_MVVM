@@ -9,30 +9,30 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 Spacing="25"
-                Padding="20,0"
                 VerticalOptions="Start">
 
                 <Label
                     Grid.Row="1"
                     Text="Mes Livres"
-                    FontSize="40"
+                    FontSize="35"
+                    Padding="20,0"
                     HorizontalOptions="Start"
                     FontAttributes="Bold"/>
 
-                <ListView x:Name="listView" Grid.Row="2">
+                <ListView x:Name="listView" Grid.Row="2" BackgroundColor="#f6f6f6">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
 
-                                    <Image Source="{Binding IconPath}" WidthRequest="24" HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="0,0,15,0" />
+                                    <Image Source="{Binding IconPath}" WidthRequest="24" HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
 
                                     <Label Text="{Binding Text}" FontSize="15" VerticalOptions="CenterAndExpand" />
 
                                     <Label Text="{Binding CountBook}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
-                                    <Image Source="chevron_right.png" Style="{StaticResource ColoredIconStyle}" VerticalOptions="CenterAndExpand" Margin="5,0,0,0" />
+                                    <Image Source="chevron_right.png" Style="{StaticResource ColoredIconStyle}" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15" />
 
                                 </StackLayout>
                             </ViewCell>
@@ -40,6 +40,37 @@
                     </ListView.ItemTemplate>
 
                 </ListView>
+
+                <Label
+                    Grid.Row="3"
+                    Text="Filtres"
+                    FontSize="20"
+                    Padding="20,0"
+                    HorizontalOptions="Start"
+                    FontAttributes="Bold"/>
+
+                <ListView x:Name="listView2" Grid.Row="2" BackgroundColor="#f6f6f6">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Image Source="{Binding IconPath}" WidthRequest="24" HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
+
+                                    <Label Text="{Binding Text}" FontSize="15" VerticalOptions="CenterAndExpand" />
+
+                                    <Label Text="{Binding CountBook}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+
+                                    <Image Source="chevron_right.png" Style="{StaticResource ColoredIconStyle}" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15" />
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
