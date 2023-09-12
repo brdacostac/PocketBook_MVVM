@@ -14,7 +14,7 @@
         </Tab>
 
         <Tab Title="My Lists" Icon="list_books.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+            <ShellContent ContentTemplate="{DataTemplate local:MyList}" Route="MainPage"/>
         </Tab>
 
         <Tab Title="My Readings" Icon="bookmark_fill.png">
