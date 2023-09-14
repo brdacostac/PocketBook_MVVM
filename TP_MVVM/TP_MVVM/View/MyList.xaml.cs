@@ -6,6 +6,7 @@ public partial class MyList : ContentPage
 	{
 		InitializeComponent();
 
+
         var items = new List<object>
         {
             new { BookName = "La Horde du contrevent", BookAuteur = "Alain Damasio", Status = "Non lu" },

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jTbb46+UlyJIXPwEYjeFbWkHl2mavdpgxad6Ui2rrzwOI8wOTdZI4NqSuZQRIpMMLfN6bBbedlLBT4VoSi5NVw==",
+  "dgSpecHash": "Bzad05Zcpd20GSFcPzrsPpMU/ixlnBhSFsM0KBEhgn9+NFgibn3Rd5364eKHKuS2z7nCSa3Q4YhaG4lB0AWHYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\bucac\\Desktop\\TP_MVVM\\TP_MVVM\\TP_MVVM\\TP_MVVM.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bucac\\.nuget\\packages\\communitytoolkit.maui\\5.3.0\\communitytoolkit.maui.5.3.0.nupkg.sha512",
+    "C:\\Users\\bucac\\.nuget\\packages\\communitytoolkit.maui.core\\5.3.0\\communitytoolkit.maui.core.5.3.0.nupkg.sha512",
     "C:\\Users\\bucac\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\bucac\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\bucac\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
@@ -19,6 +21,7 @@
     "C:\\Users\\bucac\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\7.0.92\\microsoft.maui.graphics.win2d.winui.desktop.7.0.92.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\bucac\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.221209.1\\microsoft.windowsappsdk.1.2.221209.1.nupkg.sha512",
+    "C:\\Users\\bucac\\.nuget\\packages\\system.speech\\7.0.0\\system.speech.7.0.0.nupkg.sha512",
     "C:\\Users\\bucac\\.nuget\\packages\\xamarin.android.glide\\4.13.2.2\\xamarin.android.glide.4.13.2.2.nupkg.sha512",
     "C:\\Users\\bucac\\.nuget\\packages\\xamarin.android.glide.annotations\\4.13.2.2\\xamarin.android.glide.annotations.4.13.2.2.nupkg.sha512",
     "C:\\Users\\bucac\\.nuget\\packages\\xamarin.android.glide.disklrucache\\4.13.2.2\\xamarin.android.glide.disklrucache.4.13.2.2.nupkg.sha512",

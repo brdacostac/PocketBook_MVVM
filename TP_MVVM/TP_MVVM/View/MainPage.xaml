@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TP_MVVM.View.Custom"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="TP_MVVM.View.MainPage">
 
     <Grid RowDefinitions="Auto, *">
@@ -24,15 +25,19 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" >
 
-                                    <Image Source="{Binding IconPath}" WidthRequest="24" HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
+                                    <Image Source="{Binding IconPath}" WidthRequest="24"  HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
 
                                     <Label Text="{Binding Text}" FontSize="15" VerticalOptions="CenterAndExpand" />
 
                                     <Label Text="{Binding CountBook}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
-                                    <Image Source="chevron_right.png" Style="{StaticResource ColoredIconStyle}" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15" />
+                                    <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15">
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                        </Image.Behaviors>
+                                    </Image>
 
                                 </StackLayout>
                             </ViewCell>
@@ -62,8 +67,12 @@
 
                                     <Label Text="{Binding CountBook}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
-                                    <Image Source="chevron_right.png" Style="{StaticResource ColoredIconStyle}" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15" />
-
+                                    <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15">
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                        </Image.Behaviors>
+                                    </Image>
+                                    
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

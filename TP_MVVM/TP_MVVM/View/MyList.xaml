@@ -1,42 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:local="clr-namespace:TP_MVVM.View.Custom"
              x:Class="TP_MVVM.View.MyList"
              Title="MyList">
-    <Grid RowDefinitions="Auto, 180">
+    <Grid RowDefinitions="Auto, Auto">
         <local:CustomHeader Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
-                Spacing="25"
+                
                 VerticalOptions="Start">
+                <Grid BackgroundColor="#f6f6f6" Padding="5">
+                        <Label
+                        Text="Alain Damasio"
+                        FontSize="15"
+                        TextColor="Grey"
+                        Margin="10,0,0,0"
+                        HorizontalOptions="StartAndExpand"
+                        FontAttributes="Bold"/>
+                </Grid>
 
-                <Label
-                    Text="Alain Damasio"
-                    FontSize="15"
-                    Padding="20,0"
-                    HorizontalOptions="Start"
-                    FontAttributes="Bold"/>
-
-                <ListView x:Name="listView" BackgroundColor="#f6f6f6" RowHeight="100">
-
+                <ListView x:Name="listView" RowHeight="150">
+                    
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                
-                                <StackLayout Orientation="Horizontal">
 
-                                    <Image Source="book1.png" WidthRequest="100" HeightRequest="100" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" />
+                                <StackLayout Orientation="Horizontal" >
+
+                                    <Border StrokeThickness="5" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,0">
+                                        <Image Source="book1.png" VerticalOptions="CenterAndExpand" />
+                                    </Border>
 
                                     <StackLayout Orientation="Vertical" >
 
-                                        <Label Text="{Binding BookName}" FontSize="15" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding BookName}" FontAttributes="Bold" FontSize="15" Margin="10,10,0,0" />
 
-                                        <Label Text="{Binding BookAuteur}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                                        <Label Text="{Binding BookAuteur}" FontSize="12" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" />
 
-                                        <Label Text="{Binding Status}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
-                                            
-                                        <Image Source="chevron_right.png" Style="{StaticResource ColoredIconStyle}" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15" />
+                                        <Label Text="{Binding Status}" TextColor="LightGrey" FontSize="12" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" />
+
+                                        <HorizontalStackLayout VerticalOptions="EndAndExpand" Margin="10,0,0,15">
+                                            <Image Source="star_fill.png" WidthRequest="15">
+                                                <Image.Behaviors>
+                                                    <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                                </Image.Behaviors>
+                                            </Image>
+                                            <Image Source="star_fill.png" Margin="5,0,0,0" WidthRequest="15">
+                                                <Image.Behaviors>
+                                                    <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                                </Image.Behaviors>
+                                            </Image>
+                                            <Image Source="star_fill.png" Margin="5,0,0,0" WidthRequest="15">
+                                                <Image.Behaviors>
+                                                    <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                                </Image.Behaviors>
+                                            </Image>
+                                            <Image Source="star_fill.png" Margin="5,0,0,0" WidthRequest="15">
+                                                <Image.Behaviors>
+                                                    <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                                </Image.Behaviors>
+                                            </Image>
+                                            <Image Source="star_fill.png" Margin="5,0,0,0" WidthRequest="15">
+                                                <Image.Behaviors>
+                                                    <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                                </Image.Behaviors>
+                                            </Image>
+                                        </HorizontalStackLayout>
                                     </StackLayout>
 
                                 </StackLayout>
