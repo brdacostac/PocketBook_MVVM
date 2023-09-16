@@ -66,13 +66,19 @@
                             </Image>
                         </HorizontalStackLayout>
                     </StackLayout>
-
+                    
                 </StackLayout>
                 
                 <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto">
                     <Label Grid.Column="0" Text="Infos en ligne" Margin="15,0,0,0" FontSize="Medium"/>
-                    <Image Grid.Column="2" Source="chevron_right"/>
+                    <Image Grid.Column="2" Source="chevron_right" Margin="15,0,5,0">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                        </Image.Behaviors>
+                    </Image>
                 </Grid>
+
+                
 
                 <Grid Grid.Row="2" RowDefinitions="Auto, Auto" RowSpacing="10">
                     <Label Grid.Row="0" Text="Auteur" Margin="15,0,0,0" FontAttributes="Bold" FontSize="Small"/>
@@ -127,7 +133,7 @@
                     <Label Grid.Row="0" Grid.Column="1"  Text="Déplacer le livre" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
                 </Grid>
 
-                <Rectangle Fill="LightGrey" HeightRequest="1.2"/>
+                
 
                 <Grid Grid.Row="9" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
                     <Image Source="plus_circle.png" Grid.Row="0" Margin="15,0,0,5">
