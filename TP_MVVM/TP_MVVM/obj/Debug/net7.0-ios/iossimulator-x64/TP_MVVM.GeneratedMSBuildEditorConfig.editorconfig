@@ -34,6 +34,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TP_MVVM.Resources.Styles.S
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/Users/bucac/Desktop/TP_MVVM/TP_MVVM/TP_MVVM/View/BookDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TP_MVVM.View.BookDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = View\BookDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = View\BookDetail.xaml
+
 [C:/Users/bucac/Desktop/TP_MVVM/TP_MVVM/TP_MVVM/View/Custom/CustomHeader.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TP_MVVM.View.Custom.CustomHeader.xaml
