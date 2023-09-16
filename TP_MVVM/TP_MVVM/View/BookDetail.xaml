@@ -5,31 +5,32 @@
              xmlns:local="clr-namespace:TP_MVVM.View.Custom"
              x:Class="TP_MVVM.View.BookDetail"
              Title="BookDetail">
-    <StackLayout>
+    <Grid RowDefinitions=" Auto , *">
         
-        <local:CustomHeader HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+        <local:CustomHeader Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
 
 
-        <Grid VerticalOptions="Start">
-            <ScrollView>
-                <StackLayout Orientation="Horizontal"  >
-                    <Grid>
 
-                        <Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">
+        <ScrollView Grid.Row="1">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto" VerticalOptions="Start" RowSpacing="20" ColumnSpacing="20">
+                <StackLayout Orientation="Horizontal" Grid.Row="0" >
 
-                            <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
-                                <Image x:Name="bookImage" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
-                            </Border>
+
+                    <Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">
+
+                        <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
+                            <Image x:Name="bookImage" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
                         </Border>
-                        <AbsoluteLayout>
-                            <Image Source="bookmark_fill.png" WidthRequest="18" AbsoluteLayout.LayoutBounds="0.1, 1.22, 0.5, 0.5" AbsoluteLayout.LayoutFlags="All">
-                                <Image.Behaviors>
-                                    <toolkit:IconTintColorBehavior TintColor="Red" />
-                                </Image.Behaviors>
-                            </Image>
-                        </AbsoluteLayout>
+                    </Border>
+                    <AbsoluteLayout>
+                        <Image Source="bookmark_fill.png" WidthRequest="18" AbsoluteLayout.LayoutBounds="-1, 1.22, 0.5, 0.5">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="Red" />
+                            </Image.Behaviors>
+                        </Image>
+                    </AbsoluteLayout>
 
-                    </Grid>
+
 
 
                     <StackLayout Orientation="Vertical" >
@@ -67,7 +68,96 @@
                     </StackLayout>
 
                 </StackLayout>
-            </ScrollView>
-        </Grid>
-    </StackLayout>
+                
+                <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto">
+                    <Label Grid.Column="0" Text="Infos en ligne" Margin="15,0,0,0" FontSize="Medium"/>
+                    <Image Grid.Column="2" Source="chevron_right"/>
+                </Grid>
+
+                <Grid Grid.Row="2" RowDefinitions="Auto, Auto" RowSpacing="10">
+                    <Label Grid.Row="0" Text="Auteur" Margin="15,0,0,0" FontAttributes="Bold" FontSize="Small"/>
+                    <Label Grid.Row="1" Text="Alain Damasio" Margin="15,0,0,0" FontSize="Medium"/>
+                </Grid>
+
+                <Grid Grid.Row="3" RowDefinitions="Auto, Auto" RowSpacing="10">
+                    <Label Grid.Row="0" Text="Maison d'édition" Margin="15,0,0,0" FontAttributes="Bold" FontSize="Small"/>
+                    <Label Grid.Row="1" Text="Gallimard (2015)" Margin="15,0,0,0" FontSize="Medium"/>
+                </Grid>
+
+                <Grid Grid.Row="4" RowDefinitions="Auto, Auto" RowSpacing="10">
+                    <Label Grid.Row="0" Text="Résumé" Margin="15,0,0,0" FontAttributes="Bold" FontSize="Small"/>
+                    <Label Grid.Row="1" Text="Lorem Ipsum is simply dummy text of
+                           the printing and typesetting industry. Lorem Ipsum has been
+                           the industry's standard dummy text ever since the 1500s, when an unknown
+                           printer took a galley of type and scrambled it to make a type specimen book. It has survived not
+                           only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                           It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                           and more recently with desktop publishing
+                           software like Aldus PageMaker including versions of Lorem Ipsum." Margin="15,0,0,0" FontSize="Small"/>
+                </Grid>
+                
+                <Grid Grid.Row="5" RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
+                    <Label Grid.Row="0" Text="Détails" Margin="15,0,0,5" FontAttributes="Bold" FontSize="Small"/>
+                    <Label Grid.Row="1" Text="Nombre de pages" Margin="15,0,0,0" FontSize="Small"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="700" HorizontalOptions="End" Margin="15,0,15,0" FontSize="Small"/>
+                    <Label Grid.Row="2" Text="Langue" Margin="15,0,0,0" FontSize="Small"/>
+                    <Label Grid.Row="2" Grid.Column="1" Text="français" Margin="15,0,15,0" HorizontalOptions="End" FontSize="Small"/>
+                    <Label Grid.Row="3" Text="ISBN" Margin="15,0,0,0" FontSize="Small"/>
+                    <Label Grid.Row="3" Grid.Column="1" Text="9782070464234" Margin="15,0,15,0" HorizontalOptions="End" FontSize="Small"/>
+                </Grid>
+
+                <Grid Grid.Row="6" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
+                    <Label Grid.Row="0" Text="Statut de lecture" Margin="15,0,0,5" FontAttributes="Bold" FontSize="Small"/>
+                    <Label Grid.Row="1" Text="Statut" Margin="15,0,0,5" FontSize="Small"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="Non lu" Margin="15,0,15,0" HorizontalOptions="End" FontSize="Small"/>
+                </Grid>
+
+                <Grid Grid.Row="7" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,*" RowSpacing="10">
+                    <Label Grid.Row="0" Text="Bibliothèque" Margin="15,0,0,5" FontAttributes="Bold" FontSize="Small"/>
+                    <Label Grid.Row="1" Text="Ajouté le" Margin="15,0,0,5" FontSize="Small"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="10 août 2023" Margin="15,0,15,0" HorizontalOptions="End" FontSize="Small"/>
+                </Grid>
+
+                <Grid Grid.Row="8" Margin="0,100,0,0" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                    <Image Source="folder.png" Grid.Row="0" Margin="15,0,0,5">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Red" />
+                        </Image.Behaviors>
+                    </Image>
+                    <Label Grid.Row="0" Grid.Column="1"  Text="Déplacer le livre" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
+                </Grid>
+
+                <Rectangle Fill="LightGrey" HeightRequest="1.2"/>
+
+                <Grid Grid.Row="9" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                    <Image Source="plus_circle.png" Grid.Row="0" Margin="15,0,0,5">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Red" />
+                        </Image.Behaviors>
+                    </Image>
+                    <Label Grid.Row="0" Grid.Column="1"  Text="Ajouter à la liste à lire plus tard" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
+                </Grid>
+
+                <Grid Grid.Row="10" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                    <Image Source="eyeglasses.png" Grid.Row="0" Margin="15,0,0,5">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Red" />
+                        </Image.Behaviors>
+                    </Image>
+                    <Label Grid.Row="0" Grid.Column="1"  Text="Changer le statut de lecture" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
+                </Grid>
+
+                <Grid Grid.Row="11" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                    <Image Source="person.png" Grid.Row="0" Margin="15,0,0,5">
+                        <Image.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="Red" />
+                        </Image.Behaviors>
+                    </Image>
+                    <Label Grid.Row="0" Grid.Column="1"  Text="Prêter le livre" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
+                </Grid>
+
+            </Grid>
+        </ScrollView>
+    
+    </Grid>
 </ContentPage>
