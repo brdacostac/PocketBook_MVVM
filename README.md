@@ -35,4 +35,6 @@ Quelques problèmes ont été rencontrés lors de la mise en œuvre du projet :
 
 - **Font Family :** L'ajout d'une font Family pour tous les labels a provoqué des crash sur mon Visual Studio. En conséquence, chaque style de police a dû être ajouté manuellement à chaque label.
 
+- **Tests :** Le projet a été testé uniquement sur Android. (Je n'ai pas reussi à installer un emulateur IOS)
+
 - **Branch à être noté :** master
