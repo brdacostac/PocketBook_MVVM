@@ -6,7 +6,7 @@
              x:Class="TP_MVVM.View.MainPage">
     
     <Grid RowDefinitions="Auto, *">
-        <local:CustomHeader HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+        <local:CustomHeader HeightRequest="50" VerticalOptions="Start" PopupRequested="CallPopUp" Padding="10, 0"/>
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 Spacing="25"

@@ -12,7 +12,8 @@
         <ImageButton Source="plus.png" Grid.Column="2"
                 MaximumHeightRequest="20"
                 MaximumWidthRequest="20"
-                VerticalOptions="Center">
+                VerticalOptions="Center"
+                Clicked="PopUp">
             <ImageButton.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="#f81818" />
             </ImageButton.Behaviors>

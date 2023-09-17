@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TP_MVVM.View.Custom.CustomMenuPopUp"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               Color="Transparent">
+    
+    <StackLayout Padding="0,50,0,0">
+
+        <Border>
+            <Grid BackgroundColor="WhiteSmoke" RowDefinitions="auto,auto,auto,auto,auto,auto">
+
+
+                <Label
+                Grid.Row="0"
+                Margin="10,0,0,0"
+                Padding="5"
+                FontSize="Small"
+                Text="Ajouter un livre"
+                TextColor="Gray" />
+
+                
+
+                <Grid Grid.Row="1" ColumnDefinitions="auto,auto" ColumnSpacing="5">
+
+                    <Label
+                     Grid.Column="0"
+                     Margin="10,0,0,0"
+                     Padding="5"
+                     FontSize="Medium"  
+                     Text="Scanner un code-barres" />
+                    
+                    <Image Grid.Column="1" Source="barcode_scanner.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
+                </Grid>
+
+                <Grid Grid.Row="2" ColumnDefinitions="auto,auto" ColumnSpacing="5">
+
+                <Label
+                 Grid.Column="0"
+                 Margin="10,0,0,0"
+                 Padding="5"
+                 FontSize="Medium"  
+                 Text="Scanner des code-barres" />
+
+                    <Image Grid.Column="1" Source="barcodes.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
+                </Grid>
+
+                <BoxView
+                Grid.Row="3"
+                HeightRequest="6"
+                HorizontalOptions="FillAndExpand"
+                Color="LightGray" />
+
+                <Grid Grid.Row="4" ColumnDefinitions="auto,auto" ColumnSpacing="5">
+
+                    <Label
+                     Grid.Column="0"
+                     Margin="10,0,0,0"
+                     Padding="5"
+                     FontSize="Medium"  
+                     Text="Rechercher en ligne" />
+
+                    <Image Grid.Column="1" Source="magnifyingglass.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
+                </Grid>
+
+                <Grid Grid.Row="5" ColumnDefinitions="auto,auto" ColumnSpacing="5">
+
+                    <Label
+                     Grid.Column="0"
+                     Margin="10,0,0,0"
+                     Padding="5"
+                     FontSize="Medium"  
+                     Text="Saisir l'ISBN" />
+
+                    <Image Grid.Column="1" Source="keyboard.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
+                </Grid>
+
+
+
+            </Grid>
+        </Border>
+
+
+    </StackLayout>
+</toolkit:Popup>

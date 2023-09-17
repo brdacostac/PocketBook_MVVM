@@ -5,7 +5,7 @@
              x:Class="TP_MVVM.View.Custom.CustomHeaderReturn"
              x:Name="CustomHeaderReturnKey">
 
-    <Grid ColumnDefinitions="20, auto, *, auto, auto">
+    <Grid ColumnDefinitions="20, auto, *, auto, auto" ColumnSpacing="10">
 
         <ImageButton Source="chevron_left.png" Grid.Column="0"
                 MaximumHeightRequest="25"
@@ -58,7 +58,7 @@
             IsVisible="{Binding IsArrowBtnVisible, Source={x:Reference CustomHeaderReturnKey}}"
             VerticalOptions="End">
                     <ImageButton.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="#f81818" />
+                        <toolkit:IconTintColorBehavior TintColor="#f81818" />
                     </ImageButton.Behaviors>
         </ImageButton>
 

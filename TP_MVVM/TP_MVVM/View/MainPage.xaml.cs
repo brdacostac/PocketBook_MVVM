@@ -1,4 +1,7 @@
-﻿namespace TP_MVVM.View
+﻿using CommunityToolkit.Maui.Views;
+using TP_MVVM.View.Custom;
+
+namespace TP_MVVM.View
 {
     public partial class MainPage : ContentPage
     {
@@ -29,7 +32,34 @@
 
             listView.ItemsSource = items;
             listView2.ItemsSource = items2;
+
+            listView.ItemTapped += ListView_ItemTapped;
         }
 
+        private void CallPopUp(object sender, EventArgs e)
+        {
+            var popup = new CustomMenuPopUp();
+            this.ShowPopup(popup);
+        }
+
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item != null)
+            {
+                var selectedItem = e.Item as dynamic;
+
+                if (selectedItem.Text == "En prêt")
+                {
+                    await Navigation.PushAsync(new Emprunts());
+                }
+            }
+
+            ((ListView)sender).SelectedItem = null;
+        }
+
+        private void CustomHeader_PopupRequested(object sender, EventArgs e)
+        {
+
+        }
     }
 }
