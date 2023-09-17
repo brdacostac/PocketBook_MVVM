@@ -6,8 +6,9 @@
              x:Class="TP_MVVM.View.BookDetail"
              Title="BookDetail">
     <Grid RowDefinitions=" Auto , *">
-        
-        <local:CustomHeader Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+
+        <local:CustomHeaderReturn  TitleLastPage="Tous" TitleCurrentPage="Détails du livre" IsArrowBtnVisible="False" IsPlusBtnVisible="False" Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+
 
 
 

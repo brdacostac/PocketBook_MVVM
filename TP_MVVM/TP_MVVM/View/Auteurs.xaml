@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TP_MVVM.View.Custom"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="TP_MVVM.View.Auteurs"
+             Title="Auteurs">
+    <Grid RowDefinitions="Auto,*">
+        <local:CustomHeaderReturn  TitleLastPage="Mes Livres" TitleCurrentPage="Auteurs" IsArrowBtnVisible="True" IsPlusBtnVisible="False" Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical">
+
+
+
+                <VerticalStackLayout>
+                   
+                    <Grid ColumnDefinitions="*,Auto">
+                        <SearchBar Grid.Column="0" Placeholder="Rechercher" HeightRequest="70" />
+                        <Button Grid.Column="1" Text="Annuler" TextColor="Gray" FontAttributes="Bold" BackgroundColor="White"/>
+                    </Grid>
+                    
+                </VerticalStackLayout>
+
+                <ListView x:Name="listView" Grid.Row="2" BackgroundColor="#f6f6f6">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" >
+
+                                    <Image Source="book.png" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" WidthRequest="25">
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="Red"/>
+                                        </Image.Behaviors>
+                                    </Image>
+
+                                    <Label Text="{Binding BookAuteur}" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" FontSize="18" />
+
+                                    <Label Text="{Binding CountBook}" TextColor="LightGrey"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+
+                                    <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="20">
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="LightGray" />
+                                        </Image.Behaviors>
+                                    </Image>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

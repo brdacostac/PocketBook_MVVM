@@ -3,9 +3,16 @@
     x:Class="TP_MVVM.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:TP_MVVM.View"
+    Shell.BackgroundColor="White"
     Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False">
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarTitleColor="#f81818">
+
+    <Shell.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="White" StatusBarStyle="DarkContent" />
+    </Shell.Behaviors>
 
     <TabBar>
 
@@ -18,7 +25,7 @@
         </Tab>
 
         <Tab Title="My Readings" Icon="bookmark_fill.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+            <ShellContent ContentTemplate="{DataTemplate local:Auteurs}" Route="Auteurs"/>
         </Tab>
 
         <Tab Title="Search" Icon="magnifyingglass.png">

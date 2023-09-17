@@ -18,10 +18,16 @@
     <MauiXaml Update="AppShell.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="View\Auteurs.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\BookDetail.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="View\Custom\CustomHeader.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="View\Custom\CustomHeaderReturn.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="View\MainPage.xaml">
