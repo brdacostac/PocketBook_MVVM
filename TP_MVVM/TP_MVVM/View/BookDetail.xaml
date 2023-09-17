@@ -16,21 +16,23 @@
                 <StackLayout Orientation="Horizontal" Grid.Row="0" >
 
 
+
+                    <Grid>
                     <Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">
 
                         <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
                             <Image x:Name="bookImage" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
                         </Border>
                     </Border>
+
                     <AbsoluteLayout>
-                        <Image Source="bookmark_fill.png" WidthRequest="18" AbsoluteLayout.LayoutBounds="-1, 1.22, 0.5, 0.5">
+                        <Image Source="bookmark_fill.png" WidthRequest="18" AbsoluteLayout.LayoutBounds="20,136,-1,-1">
                             <Image.Behaviors>
                                 <toolkit:IconTintColorBehavior TintColor="Red" />
                             </Image.Behaviors>
                         </Image>
                     </AbsoluteLayout>
-
-
+                    </Grid>
 
 
                     <StackLayout Orientation="Vertical" >
