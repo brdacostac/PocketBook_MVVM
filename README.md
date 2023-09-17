@@ -34,3 +34,5 @@ Quelques problèmes ont été rencontrés lors de la mise en œuvre du projet :
 - **Dark Mode :** L'implémentation du dark mode n'a pas été réussie.
 
 - **Font Family :** L'ajout d'une font Family pour tous les labels a provoqué des crash sur mon Visual Studio. En conséquence, chaque style de police a dû être ajouté manuellement à chaque label.
+
+- **Branch à être noté :** master
