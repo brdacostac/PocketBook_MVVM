@@ -6,7 +6,7 @@
     
     <Grid ColumnDefinitions="110, *, 40">
 
-        <Label Text="Modifier" FontAttributes="Bold" TextColor="#f81818" Grid.Column="0" Padding="10" FontSize="18"/>
+        <Label Text="Modifier" Style="{StaticResource CustomLabelStyle}" FontAttributes="Bold" TextColor="#f81818" Grid.Column="0" Padding="10" FontSize="18"/>
 
 
         <ImageButton Source="plus.png" Grid.Column="2"

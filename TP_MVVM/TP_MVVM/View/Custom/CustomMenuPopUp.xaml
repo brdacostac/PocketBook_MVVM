@@ -19,6 +19,7 @@
                 Padding="5"
                 FontSize="Small"
                 Text="Ajouter un livre"
+                Style="{StaticResource CustomLabelStyle}"
                 TextColor="Gray" />
 
                 
@@ -30,6 +31,7 @@
                      Margin="10,0,0,0"
                      Padding="5"
                      FontSize="Medium"  
+                     Style="{StaticResource CustomLabelStyle}"
                      Text="Scanner un code-barres" />
                     
                     <Image Grid.Column="1" Source="barcode_scanner.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
@@ -41,7 +43,8 @@
                  Grid.Column="0"
                  Margin="10,0,0,0"
                  Padding="5"
-                 FontSize="Medium"  
+                 FontSize="Medium"
+                 Style="{StaticResource CustomLabelStyle}"
                  Text="Scanner des code-barres" />
 
                     <Image Grid.Column="1" Source="barcodes.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
@@ -60,6 +63,7 @@
                      Margin="10,0,0,0"
                      Padding="5"
                      FontSize="Medium"  
+                     Style="{StaticResource CustomLabelStyle}"
                      Text="Rechercher en ligne" />
 
                     <Image Grid.Column="1" Source="magnifyingglass.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
@@ -71,7 +75,8 @@
                      Grid.Column="0"
                      Margin="10,0,0,0"
                      Padding="5"
-                     FontSize="Medium"  
+                     FontSize="Medium"
+                     Style="{StaticResource CustomLabelStyle}"
                      Text="Saisir l'ISBN" />
 
                     <Image Grid.Column="1" Source="keyboard.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>

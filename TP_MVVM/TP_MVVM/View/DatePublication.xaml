@@ -34,9 +34,9 @@
                                         </Image.Behaviors>
                                     </Image>
 
-                                    <Label Text="{Binding YearNumber}" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="{Binding YearNumber}" Style="{StaticResource CustomLabelStyle}" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" FontSize="18" />
 
-                                    <Label Text="{Binding CountBook}" TextColor="LightGrey"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                                    <Label Text="{Binding CountBook}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
                                     <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="20">
                                         <Image.Behaviors>

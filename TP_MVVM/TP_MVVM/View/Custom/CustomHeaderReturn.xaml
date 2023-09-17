@@ -22,6 +22,7 @@
             Grid.Column="1"
             FontSize="17"
             FontAttributes="Bold"
+            Style="{StaticResource CustomLabelStyle}"
             Text="{Binding TitleLastPage, Source={x:Reference CustomHeaderReturnKey}}">
             <Label.TextColor>#f81818</Label.TextColor>
         </Label>
@@ -34,6 +35,7 @@
             FontSize="17"
             TextColor="Black"
             FontAttributes="Bold"
+            Style="{StaticResource CustomLabelStyle}"
             Text="{Binding TitleCurrentPage, Source={x:Reference CustomHeaderReturnKey}}">
             
         </Label>
