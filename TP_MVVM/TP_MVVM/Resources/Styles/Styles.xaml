@@ -5,7 +5,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     
-    
+    <!--LabelFont Family-->
+    <Style x:Key="CustomLabelStyle" TargetType="Label">
+        <Setter  Property="FontFamily">
+            <Setter.Value>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android" Value="SFCompactDisplayBold" />
+                    <On Platform="iOS" Value="SF-Compact-Display-Bold" />
+                    <On Platform="macOS" Value="SF-Compact-Display-Bold" />
+                    <On Platform="Windows" Value="Assets/Fonts/SF-Compact-Display-Bold.ttf#SFCompactDisplayBold" />
+                    <On Platform="WinUI" Value="Assets/Fonts/SF-Compact-Display-Bold.ttf#SFCompactDisplayBold" />
+                </OnPlatform>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />

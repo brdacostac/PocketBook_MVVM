@@ -18,7 +18,8 @@
                     FontSize="35"
                     Padding="20,0"
                     HorizontalOptions="Start"
-                    FontAttributes="Bold"/>
+                    FontAttributes="Bold"
+                    Style="{StaticResource CustomLabelStyle}"/>
 
                 <ListView x:Name="listView" Grid.Row="2" BackgroundColor="#f6f6f6">
 
