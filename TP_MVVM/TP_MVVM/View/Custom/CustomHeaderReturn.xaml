@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="TP_MVVM.View.Custom.CustomHeaderReturn"
+             x:Name="CustomHeaderReturnKey">
+
+    <Grid ColumnDefinitions="20, auto, *, auto, auto" ColumnSpacing="10">
+
+        <ImageButton Source="chevron_left.png" Grid.Column="0"
+                MaximumHeightRequest="25"
+                MaximumWidthRequest="25"
+                VerticalOptions="Center">
+            <ImageButton.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="#f81818" />
+            </ImageButton.Behaviors>
+        </ImageButton>
+
+        <Label
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            Grid.Column="1"
+            FontSize="17"
+            FontAttributes="Bold"
+            Style="{StaticResource CustomLabelStyle}"
+            Text="{Binding TitleLastPage, Source={x:Reference CustomHeaderReturnKey}}">
+            <Label.TextColor>#f81818</Label.TextColor>
+        </Label>
+
+        <Label
+            Grid.Column="2"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,0,70,0"
+            FontSize="17"
+            TextColor="Black"
+            FontAttributes="Bold"
+            Style="{StaticResource CustomLabelStyle}"
+            Text="{Binding TitleCurrentPage, Source={x:Reference CustomHeaderReturnKey}}">
+            
+        </Label>
+
+        <ImageButton
+            Grid.Column="3"
+            MaximumHeightRequest="20"
+            MaximumWidthRequest="20"
+            IsVisible="{Binding IsPlusBtnVisible, Source={x:Reference CustomHeaderReturnKey}}"
+            Source="plus.png"
+            VerticalOptions="End">
+                    <ImageButton.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="#f81818" />
+                    </ImageButton.Behaviors>
+        </ImageButton>
+
+        <ImageButton
+            Grid.Column="4"
+            MaximumHeightRequest="25"
+            MaximumWidthRequest="25"
+            Source="arrow_up_down.png"
+            IsVisible="{Binding IsArrowBtnVisible, Source={x:Reference CustomHeaderReturnKey}}"
+            VerticalOptions="End">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="#f81818" />
+                    </ImageButton.Behaviors>
+        </ImageButton>
+
+    </Grid>
+</ContentView>
