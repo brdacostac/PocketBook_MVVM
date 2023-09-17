@@ -75,6 +75,9 @@
 	  <MauiXaml Update="View\Custom\CustomHeaderReturn.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\DatePublication.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\MyList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

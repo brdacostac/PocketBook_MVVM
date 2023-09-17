@@ -29,7 +29,7 @@
         </Tab>
 
         <Tab Title="Search" Icon="magnifyingglass.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+            <ShellContent ContentTemplate="{DataTemplate local:DatePublication}" Route="DatePublication"/>
         </Tab>
     </TabBar>
 

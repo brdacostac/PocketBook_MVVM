@@ -30,6 +30,9 @@
     <MauiXaml Update="View\Custom\CustomHeaderReturn.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="View\DatePublication.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\MainPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
