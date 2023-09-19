@@ -24,6 +24,9 @@
     <MauiXaml Update="View\BookDetail.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="View\Content\buttonMenu.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\Custom\CustomHeader.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

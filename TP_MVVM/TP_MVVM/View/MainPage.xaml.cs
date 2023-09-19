@@ -1,16 +1,19 @@
 ﻿using CommunityToolkit.Maui.Views;
 using TP_MVVM.View.Custom;
+using TP_MVVM.ViewModel;
 
 namespace TP_MVVM.View
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+       
+        public NavigationVM Navigater {get; private set;}
 
-        public MainPage()
+        public MainPage(NavigationVM Navigater)
         {
             InitializeComponent();
 
+            BindingContext = this;
 
             var items = new List<object>
         {
@@ -29,9 +32,6 @@ namespace TP_MVVM.View
             new { IconPath = "Resources/Images/sparkles.png", Text = "Note" },
         };
 
-
-            listView.ItemsSource = items;
-            listView2.ItemsSource = items2;
 
             listView.ItemTapped += ListView_ItemTapped;
         }

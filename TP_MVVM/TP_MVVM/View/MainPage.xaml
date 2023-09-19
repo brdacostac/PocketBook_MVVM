@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TP_MVVM.View.Custom"
+             xmlns:content="clr-namespace:TP_MVVM.View.Content"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="TP_MVVM.View.MainPage">
     
@@ -26,21 +27,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal" >
-
-                                    <Image Source="{Binding IconPath}" WidthRequest="24"  HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
-
-                                    <Label Text="{Binding Text}" Style="{StaticResource CustomLabelStyle}" FontSize="15" VerticalOptions="CenterAndExpand" />
-
-                                    <Label Text="{Binding CountBook}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
-
-                                    <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15">
-                                        <Image.Behaviors>
-                                            <toolkit:IconTintColorBehavior TintColor="LightGray" />
-                                        </Image.Behaviors>
-                                    </Image>
-
-                                </StackLayout>
+                                <content:buttonMenu CommandName="{Binding Navigater}" IconPath="tray_fill.png" Title="Tous" CountBook="45"/>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

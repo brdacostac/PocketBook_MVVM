@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using TP_MVVM.View;
+using TP_MVVM.ViewModel;
 
 namespace TP_MVVM
 {
@@ -17,6 +19,10 @@ namespace TP_MVVM
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("SF-Compact-Display-Bold.ttf", "SFCompactDisplayBold");
                 });
+
+            builder.Services
+                .AddSingleton<NavigationVM>()
+                .AddSingleton<MainPage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
