@@ -22,17 +22,14 @@
                     FontAttributes="Bold"
                     Style="{StaticResource CustomLabelStyle}"/>
 
-                <ListView x:Name="listView" Grid.Row="2" BackgroundColor="#f6f6f6">
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <content:buttonMenu CommandName="{Binding Navigater}" IconPath="tray_fill.png" Title="Tous" CountBook="45"/>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="tray_fill.png" Title="Tous" CountBook="45"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="person_badge_clock_fill.png" Title="En prêt" CountBook="1"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="arrow_forward.png" Title="À lire plus tard"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="eyeglasses.png" Title="Statut de lecture"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="heart_fill.png" Title="Favoris"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="tag_fill.png" Title="Étiquettes"/>
 
-                </ListView>
 
                 <Label
                     Grid.Row="3"
@@ -43,31 +40,11 @@
                     FontAttributes="Bold"
                     Style="{StaticResource CustomLabelStyle}"/>
 
-                <ListView x:Name="listView2" Grid.Row="2" BackgroundColor="#f6f6f6">
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="person_fill.png" Title="Auteur"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="calendar.png" Title="Date de publication"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="sparkles.png" Title="Note"/>
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal">
 
-                                    <Image Source="{Binding IconPath}" WidthRequest="24" HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
-
-                                    <Label Text="{Binding Text}" Style="{StaticResource CustomLabelStyle}" FontSize="15" VerticalOptions="CenterAndExpand" />
-
-                                    <Label Text="{Binding CountBook}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
-
-                                    <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15">
-                                        <Image.Behaviors>
-                                            <toolkit:IconTintColorBehavior TintColor="LightGray" />
-                                        </Image.Behaviors>
-                                    </Image>
-                                    
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-
-                </ListView>
 
             </VerticalStackLayout>
         </ScrollView>

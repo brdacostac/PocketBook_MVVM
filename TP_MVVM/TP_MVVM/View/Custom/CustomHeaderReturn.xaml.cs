@@ -3,7 +3,6 @@ namespace TP_MVVM.View.Custom;
 public partial class CustomHeaderReturn : ContentView
 {
 	
-    
 
     public static readonly BindableProperty TitleLastPageTextProperty = BindableProperty.Create(nameof(TitleLastPage), typeof(string), typeof(CustomHeaderReturn), string.Empty);
 

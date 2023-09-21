@@ -2,18 +2,19 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="TP_MVVM.View.Content.buttonMenu">
+             x:Class="TP_MVVM.View.Content.buttonMenu"
+             x:Name="this">
 
     <ContentView.GestureRecognizers>
-        <TapGestureRecognizer Command="{Binding CommandName}"></TapGestureRecognizer>
+        <TapGestureRecognizer Command="{Binding CommandName, Source={x:Reference this}}"></TapGestureRecognizer>
     </ContentView.GestureRecognizers>
-    <StackLayout Orientation="Horizontal" >
+    <StackLayout BindingContext="{x:Reference this}" Orientation="Horizontal" HorizontalOptions="Start" >
 
-        <Image Source="{Binding IconPath}" WidthRequest="24"  HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
+        <Image Source="{Binding IconPath, Source={x:Reference this}}" WidthRequest="24"  HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
 
-        <Label Text="{Binding Title}" Style="{StaticResource CustomLabelStyle}" FontSize="15" VerticalOptions="CenterAndExpand" />
+        <Label Text="{Binding Title, Source={x:Reference this}}" Style="{StaticResource CustomLabelStyle}" FontSize="15" VerticalOptions="CenterAndExpand" />
 
-        <Label Text="{Binding CountBook}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+        <Label Text="{Binding CountBook, Source={x:Reference this}}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
         <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15">
             <Image.Behaviors>
