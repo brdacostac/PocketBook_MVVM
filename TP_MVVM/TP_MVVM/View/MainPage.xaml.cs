@@ -14,9 +14,8 @@ namespace TP_MVVM.View
         public MainPage(NavigationVM Navigater)
         {
             InitializeComponent();
-
+            this.Navigater = Navigater;
             BindingContext = this;
-       
             
         }
 

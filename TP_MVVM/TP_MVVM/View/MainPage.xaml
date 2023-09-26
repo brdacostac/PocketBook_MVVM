@@ -24,11 +24,11 @@
 
 
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="tray_fill.png" Title="Tous" CountBook="45"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="person_badge_clock_fill.png" Title="En prêt" CountBook="1"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="arrow_forward.png" Title="À lire plus tard"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="eyeglasses.png" Title="Statut de lecture"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="heart_fill.png" Title="Favoris"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="tag_fill.png" Title="Étiquettes"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToEmprunt}" IconPath="person_badge_clock_fill.png" Title="En prêt" CountBook="1"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="arrow_forward.png" Title="À lire plus tard"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="eyeglasses.png" Title="Statut de lecture"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="heart_fill.png" Title="Favoris"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="tag_fill.png" Title="Étiquettes"/>
 
 
                 <Label
@@ -40,9 +40,9 @@
                     FontAttributes="Bold"
                     Style="{StaticResource CustomLabelStyle}"/>
 
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="person_fill.png" Title="Auteur"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="calendar.png" Title="Date de publication"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToBooksCommand}" IconPath="sparkles.png" Title="Note"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="person_fill.png" Title="Auteur"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="calendar.png" Title="Date de publication"/>
+                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="sparkles.png" Title="Note"/>
 
 
 

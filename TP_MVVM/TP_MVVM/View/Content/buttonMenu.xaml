@@ -5,10 +5,11 @@
              x:Class="TP_MVVM.View.Content.buttonMenu"
              x:Name="this">
 
-    <ContentView.GestureRecognizers>
-        <TapGestureRecognizer Command="{Binding CommandName, Source={x:Reference this}}"></TapGestureRecognizer>
-    </ContentView.GestureRecognizers>
-    <StackLayout BindingContext="{x:Reference this}" Orientation="Horizontal" HorizontalOptions="Start" >
+
+    <StackLayout BindingContext="{x:Reference this}" Orientation="Horizontal" >
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding CommandName}"></TapGestureRecognizer>
+        </StackLayout.GestureRecognizers>
 
         <Image Source="{Binding IconPath, Source={x:Reference this}}" WidthRequest="24"  HeightRequest="24" VerticalOptions="CenterAndExpand" Margin="20,0,15,0" />
 
@@ -16,7 +17,7 @@
 
         <Label Text="{Binding CountBook, Source={x:Reference this}}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
-        <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="15">
+        <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" HorizontalOptions="End" Margin="5,0,10,0" WidthRequest="15">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="LightGray" />
             </Image.Behaviors>
