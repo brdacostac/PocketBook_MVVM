@@ -13,7 +13,6 @@ namespace TP_MVVM.ViewModel
         public ICommand NavigateToBooksCommand { get; set; }
         public ICommand NavigateToBookDetail { get; set; }
         public ICommand NavigateToEmprunt { get; set; }
-
         public ICommand NavigateToAuteurs { get; set; }
 
 

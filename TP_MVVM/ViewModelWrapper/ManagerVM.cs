@@ -1,11 +1,9 @@
-﻿using Model;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using ModelViewWrap;
+using Model;
 
-
-namespace ModelViewWrap
-{ 
+namespace ViewModelWrapper
+{
     public class ManagerVM
     {
         private Manager managerModel;
@@ -16,9 +14,9 @@ namespace ModelViewWrap
             set => managerModel = value;
         }
 
-        Collection<BookVM> books = new Collection<BookVM>();
+        IEnumerable<BookVM> books = new ObservableCollection<BookVM>();
 
-        public Collection<BookVM> Books
+        public IEnumerable<BookVM> Books
         {
             get => books;
             set => books = value;
@@ -34,12 +32,10 @@ namespace ModelViewWrap
 
             GetBooksCommand = new Command(() =>
             {
-                this.Books = (await managerModel.GetBooksByTitle("", 0, 10)).books.Select(book => new BookVM(book));
+                this.Books = (managerModel.GetBooksByTitle("", 0, 10)).Result.books.Select(book => new BookVM(book));
             });
-            
 
 
         }
     }
-    
 }
