@@ -1,10 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Input;
 using Model;
 
 namespace ViewModelWrapper
 {
-    public class ManagerVM
+    public class ManagerVM 
     {
         private Manager managerModel;
 
