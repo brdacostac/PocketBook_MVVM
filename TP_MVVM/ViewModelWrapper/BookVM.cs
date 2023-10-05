@@ -1,4 +1,5 @@
 ﻿using Model;
+using MyToolKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,17 +8,22 @@ using System.Threading.Tasks;
 
 namespace ViewModelWrapper
 {
-    public class BookVM 
+    public class BookVM : BaseViewModel<Book>
     {
 
-        private Book model;
-        public Book BookModel { get => model; set => model = value; }
-
-        public string Title { get => model.Title; set => model.Title = value; }
-
-        public BookVM(Book bookModel)
+        public string Title
         {
-            this.model = bookModel;
+          get => Model.Title;
+          set
+            {
+                if (Model == null)
+                    return;
+                SetProperty(Model?.Title, value, v => Model.Title = v);
+            }
+        }
+
+        public BookVM()
+        {
         }
 
     }
