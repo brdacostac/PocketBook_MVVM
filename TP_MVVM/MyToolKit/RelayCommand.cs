@@ -67,8 +67,10 @@ namespace MyToolKit
 
     public class RelayCommand : RelayCommand<object>
     {
-        //Faut recopier cela:
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null) : base(execute, canExecute)
+        public RelayCommand(Action execute, Func<bool> canExecute = null) : base(
+            o => execute(),
+            o => canExecute != null ? canExecute() : true
+        )
         {
         }
     }

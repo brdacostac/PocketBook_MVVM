@@ -19,5 +19,15 @@ public class ObservableObject : INotifyPropertyChanged
         action(value);
         OnPropertyChanged(property);
     }
+
+    protected virtual void SetProperty<T>(ref T member, T value, [CallerMemberName] string property = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(member, value))
+            return;
+        member = value;
+        OnPropertyChanged(property);
+    }
+
+    
 }
 

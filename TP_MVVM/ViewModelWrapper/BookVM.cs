@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ViewModelWrapper
 {
-    public class BookVM
+    public class BookVM 
     {
 
         private Book model;
