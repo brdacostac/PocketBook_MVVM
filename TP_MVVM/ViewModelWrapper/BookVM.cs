@@ -22,7 +22,8 @@ namespace ViewModelWrapper
             }
         }
 
-        public BookVM()
+        public BookVM(Book model)
+            : base(model)
         {
         }
 

@@ -2,41 +2,70 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using Model;
+using MyToolKit;
 
 namespace ViewModelWrapper
 {
-    public class ManagerVM 
+    public class ManagerVM : BaseViewModel<Manager>
     {
-        private Manager managerModel;
 
-        public Manager Model
+        private int nbPages;
+        private int index;
+        private int nbBooks;
+        private int count = 10;
+
+        public int Index
         {
-            get => managerModel;
-            set => managerModel = value;
+            get => index;
+            set => SetProperty(ref index, value);
         }
 
-        IEnumerable<BookVM> books = new ObservableCollection<BookVM>();
+        public int NbBooks
+        {
+            get => nbBooks;
+            set => SetProperty(ref nbBooks, value);
+        }
 
-        public IEnumerable<BookVM> Books
+        
+        public int NbPages
+        {
+            get => NbPages;
+            set => SetProperty(ref nbPages, value);
+        }
+
+        public int Count
+        {
+            get => count;
+            set => count = value;
+        }
+
+        public readonly ObservableCollection<BookVM> books = new ObservableCollection<BookVM>();
+
+
+        public ObservableCollection<BookVM> Books
         {
             get => books;
-            set => books = value;
         }
 
         public ICommand GetBooksCommand { get; set; }
 
 
-        public ManagerVM(Manager managerModel)
+        public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
+            : base(new Manager(libraryManager, userLibraryManager))
         {
-
-            this.managerModel = managerModel;
-
-            GetBooksCommand = new Command(() =>
+            GetBooksCommand = new Command(async () =>
             {
-                this.Books = (managerModel.GetBooksByTitle("", 0, 10)).Result.books.Select(book => new BookVM(book));
+                var result = await Model.GetBooksFromCollection(Index, Count, "");
+                NbBooks = (int)result.count;
+                NbPages = (NbBooks / Count);
+                books.Clear();
+
+                var booksVM = result.books.Select(book => new BookVM(book));
+                foreach (var book in booksVM)
+                {
+                    books.Add(book);
+                }
             });
-
-
         }
     }
 }
