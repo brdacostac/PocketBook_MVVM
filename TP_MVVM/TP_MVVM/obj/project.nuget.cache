@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "79UotkMNEdj1qfDk9Lx/Q6U5DhmJYGXXyUZNpVKzxVDorL4fcvfKCoBoOIZBREEGSlrs53H3G7MNi1TRxXuKjg==",
+  "dgSpecHash": "/ll4AzMTGVI/aM9afAXpgDCDWPNvDSgH4hgFTETI5G+V7Rt0gsPQUrexlDUcPEEB88BkyaLaCVUstO/5OyFRHQ==",
   "success": true,
   "projectFilePath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/TP_MVVM/TP_MVVM.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "/Users/etudiant/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
     "/Users/etudiant/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/Users/etudiant/.nuget/packages/microsoft.maui.graphics/7.0.92/microsoft.maui.graphics.7.0.92.nupkg.sha512",
+    "/Users/etudiant/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/etudiant/.nuget/packages/xamarin.android.glide/4.13.2.2/xamarin.android.glide.4.13.2.2.nupkg.sha512",
     "/Users/etudiant/.nuget/packages/xamarin.android.glide.annotations/4.13.2.2/xamarin.android.glide.annotations.4.13.2.2.nupkg.sha512",
     "/Users/etudiant/.nuget/packages/xamarin.android.glide.disklrucache/4.13.2.2/xamarin.android.glide.disklrucache.4.13.2.2.nupkg.sha512",

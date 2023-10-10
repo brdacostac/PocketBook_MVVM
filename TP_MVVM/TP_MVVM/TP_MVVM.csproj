@@ -86,4 +86,9 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Model\Model.csproj" />
+	  <ProjectReference Include="..\Stub\Stub.csproj" />
+	  <ProjectReference Include="..\ViewModelWrapper\ViewModelWrapper.csproj" />
+	</ItemGroup>
 </Project>

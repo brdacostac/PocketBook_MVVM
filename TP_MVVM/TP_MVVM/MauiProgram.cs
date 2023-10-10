@@ -2,6 +2,9 @@
 using Microsoft.Extensions.Logging;
 using TP_MVVM.View;
 using TP_MVVM.ViewModel;
+using ViewModelWrapper;
+using Model;
+using StubLib;
 
 namespace TP_MVVM
 {
@@ -22,10 +25,15 @@ namespace TP_MVVM
 
             builder.Services
                 .AddSingleton<NavigationVM>()
-                .AddSingleton<MainPage>();
+                .AddSingleton<MainPage>()
+                .AddSingleton<Manager>()
+                .AddSingleton<ILibraryManager, LibraryStub>()
+                .AddSingleton<ManagerVM>();
+
+
 
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -226,6 +226,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.13.2.2": {
         "type": "package",
         "dependencies": {
@@ -1952,6 +1965,117 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -2180,6 +2304,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.13.2.2": {
         "type": "package",
         "dependencies": {
@@ -3906,6 +4043,117 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -4134,6 +4382,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.13.2.2": {
         "type": "package",
         "dependencies": {
@@ -5860,6 +6121,117 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -6088,6 +6460,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.13.2.2": {
         "type": "package",
         "dependencies": {
@@ -7814,6 +8199,117 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -8042,6 +8538,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.13.2.2": {
         "type": "package",
         "dependencies": {
@@ -9768,6 +10277,117 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -9996,6 +10616,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.13.2.2": {
         "type": "package",
         "dependencies": {
@@ -11722,6 +12355,117 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -11950,6 +12694,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.13.2.2": {
         "type": "package",
         "dependencies": {
@@ -13677,6 +14434,117 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-ios16.1": {
@@ -13889,6 +14757,130 @@
           "lib/net7.0-ios16.1/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -14103,6 +15095,130 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-ios16.1/android-arm64": {
@@ -14315,6 +15431,130 @@
           "lib/net7.0-ios16.1/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -14529,6 +15769,130 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-ios16.1/android-x86": {
@@ -14741,6 +16105,130 @@
           "lib/net7.0-ios16.1/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -14955,6 +16443,130 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-ios16.1/maccatalyst-x64": {
@@ -15167,6 +16779,130 @@
           "lib/net7.0-ios16.1/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -15381,6 +17117,130 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1/android-arm": {
@@ -15593,6 +17453,130 @@
           "lib/net7.0-maccatalyst16.1/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -15807,6 +17791,130 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1/android-x64": {
@@ -16019,6 +18127,130 @@
           "lib/net7.0-maccatalyst16.1/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     },
@@ -16233,6 +18465,130 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1/iossimulator-x64": {
@@ -16446,6 +18802,130 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        }
       }
     },
     "net7.0-maccatalyst16.1/maccatalyst-x64": {
@@ -16658,6 +19138,130 @@
           "lib/net7.0-maccatalyst16.1/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DtoAbstractLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DtoAbstractLayer.dll": {}
+        }
+      },
+      "JsonReader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "LibraryDTO": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/JsonReader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonReader.dll": {}
+        }
+      },
+      "LibraryDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryDTO.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "MyToolKit/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/MyToolKit.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyToolKit.dll": {}
+        }
+      },
+      "Stub/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "StubbedDTO": "1.0.0",
+          "Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Stub.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Stub.dll": {}
+        }
+      },
+      "StubbedDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DtoAbstractLayer": "1.0.0",
+          "JsonReader": "1.0.0",
+          "LibraryDTO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StubbedDTO.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
+        }
+      },
+      "ViewModelWrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Model": "1.0.0",
+          "MyToolKit": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModelWrapper.dll": {}
         }
       }
     }
@@ -17071,6 +19675,36 @@
         "lib/netstandard2.1/Microsoft.Maui.Graphics.xml",
         "microsoft.maui.graphics.7.0.92.nupkg.sha512",
         "microsoft.maui.graphics.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Xamarin.Android.Glide/4.13.2.2": {
@@ -19069,6 +21703,51 @@
         "xamarin.kotlinx.coroutines.core.jvm.1.6.4.1.nupkg.sha512",
         "xamarin.kotlinx.coroutines.core.jvm.nuspec"
       ]
+    },
+    "DtoAbstractLayer/1.0.0": {
+      "type": "project",
+      "path": "../DtoAbstractLayer/DtoAbstractLayer.csproj",
+      "msbuildProject": "../DtoAbstractLayer/DtoAbstractLayer.csproj"
+    },
+    "JsonReader/1.0.0": {
+      "type": "project",
+      "path": "../JsonReader/JsonReader.csproj",
+      "msbuildProject": "../JsonReader/JsonReader.csproj"
+    },
+    "LibraryDTO/1.0.0": {
+      "type": "project",
+      "path": "../LibraryDTO/LibraryDTO.csproj",
+      "msbuildProject": "../LibraryDTO/LibraryDTO.csproj"
+    },
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/Model.csproj",
+      "msbuildProject": "../Model/Model.csproj"
+    },
+    "MyToolKit/1.0.0": {
+      "type": "project",
+      "path": "../MyToolKit/MyToolKit.csproj",
+      "msbuildProject": "../MyToolKit/MyToolKit.csproj"
+    },
+    "Stub/1.0.0": {
+      "type": "project",
+      "path": "../Stub/Stub.csproj",
+      "msbuildProject": "../Stub/Stub.csproj"
+    },
+    "StubbedDTO/1.0.0": {
+      "type": "project",
+      "path": "../StubbedDTO/StubbedDTO.csproj",
+      "msbuildProject": "../StubbedDTO/StubbedDTO.csproj"
+    },
+    "Utils/1.0.0": {
+      "type": "project",
+      "path": "../Utils/Utils.csproj",
+      "msbuildProject": "../Utils/Utils.csproj"
+    },
+    "ViewModelWrapper/1.0.0": {
+      "type": "project",
+      "path": "../ViewModelWrapper/ViewModelWrapper.csproj",
+      "msbuildProject": "../ViewModelWrapper/ViewModelWrapper.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -19080,6 +21759,9 @@
       "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
       "Microsoft.Maui.Graphics >= 7.0.92",
+      "Model >= 1.0.0",
+      "Stub >= 1.0.0",
+      "ViewModelWrapper >= 1.0.0",
       "Xamarin.Android.Glide >= 4.13.2.2",
       "Xamarin.AndroidX.Browser >= 1.4.0.3",
       "Xamarin.AndroidX.Legacy.Support.V4 >= 1.0.0.15",
@@ -19099,7 +21781,10 @@
       "Microsoft.Extensions.Logging >= 7.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
-      "Microsoft.Maui.Graphics >= 7.0.92"
+      "Microsoft.Maui.Graphics >= 7.0.92",
+      "Model >= 1.0.0",
+      "Stub >= 1.0.0",
+      "ViewModelWrapper >= 1.0.0"
     ],
     "net7.0-maccatalyst16.1": [
       "CommunityToolkit.Maui >= 5.3.0",
@@ -19108,7 +21793,10 @@
       "Microsoft.Extensions.Logging >= 7.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
-      "Microsoft.Maui.Graphics >= 7.0.92"
+      "Microsoft.Maui.Graphics >= 7.0.92",
+      "Model >= 1.0.0",
+      "Stub >= 1.0.0",
+      "ViewModelWrapper >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -19139,15 +21827,45 @@
       "frameworks": {
         "net7.0-android33.0": {
           "targetAlias": "net7.0-android",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Model/Model.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Model/Model.csproj"
+            },
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Stub/Stub.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Stub/Stub.csproj"
+            },
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/ViewModelWrapper/ViewModelWrapper.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/ViewModelWrapper/ViewModelWrapper.csproj"
+            }
+          }
         },
         "net7.0-ios16.1": {
           "targetAlias": "net7.0-ios",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Model/Model.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Model/Model.csproj"
+            },
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Stub/Stub.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Stub/Stub.csproj"
+            },
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/ViewModelWrapper/ViewModelWrapper.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/ViewModelWrapper/ViewModelWrapper.csproj"
+            }
+          }
         },
         "net7.0-maccatalyst16.1": {
           "targetAlias": "net7.0-maccatalyst",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Model/Model.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Model/Model.csproj"
+            },
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Stub/Stub.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/Stub/Stub.csproj"
+            },
+            "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/ViewModelWrapper/ViewModelWrapper.csproj": {
+              "projectPath": "/Users/etudiant/Desktop/TP_MVVM/TP_MVVM_Bruno/TP_MVVM/ViewModelWrapper/ViewModelWrapper.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
