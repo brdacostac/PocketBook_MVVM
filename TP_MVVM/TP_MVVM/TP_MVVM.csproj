@@ -63,6 +63,9 @@
 	  <MauiXaml Update="View\BookDetail.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Content\buttonBook.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Content\buttonMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
