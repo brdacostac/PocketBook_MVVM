@@ -3,15 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:local="clr-namespace:TP_MVVM.View.Custom"
+             xmlns:viewModelWrapper="clr-namespace:ViewModelWrapper;assembly=ViewModelWrapper"
              xmlns:content="clr-namespace:TP_MVVM.View.Content"
              x:Class="TP_MVVM.View.MyList"
              Title="MyList">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding BookListPageVM.ManagerVM.GetBooksCommand}"/>
+    </ContentPage.Behaviors>
+
     <Grid RowDefinitions="Auto, Auto">
         <local:CustomHeader Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
-                
                 VerticalOptions="Start">
+                
                 <Grid BackgroundColor="#f6f6f6" Padding="5">
                         <Label
                         Style="{StaticResource CustomLabelStyle}"
@@ -22,8 +28,39 @@
                         HorizontalOptions="StartAndExpand"
                         FontAttributes="Bold"/>
                 </Grid>
-                <content:buttonBook BookImage="book1.png" BookName = "La Horde du contrevent" BookAuteur = "Alain Damasio" Status = "Non lu" ></content:buttonBook>
-                <content:buttonBook BookImage="book2.jpg" BookName = "La zone du dehors" BookAuteur = "Alain Damasio" Status = "Terminé" ></content:buttonBook>
+
+
+                <CollectionView ItemsSource="{Binding BookListPageVM.ManagerVM.Books}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="viewModelWrapper:BookVM">
+
+                            <StackLayout Orientation="Horizontal"  >
+                                <Grid>
+                                    <!--<Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">
+
+                                        <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
+                                            <Image Source="{Binding BookImage, Source={x:Reference MyList}}" Aspect="AspectFit" WidthRequest="100" HeightRequest="140" />
+                                        </Border>
+                                    </Border>-->
+                                    <AbsoluteLayout>
+                                        <Image Source="bookmark_fill.png" WidthRequest="18" AbsoluteLayout.LayoutBounds="0.1, 1.22, 0.5, 0.5" AbsoluteLayout.LayoutFlags="All">
+                                            <Image.Behaviors>
+                                                <toolkit:IconTintColorBehavior TintColor="Red" />
+                                            </Image.Behaviors>
+                                        </Image>
+                                    </AbsoluteLayout>
+
+                                </Grid>
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="{Binding Title, Source={x:Reference MyList}}" Style="{StaticResource CustomLabelStyle}" FontAttributes="Bold" FontSize="17" Margin="10,10,0,0" />
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
 
             </VerticalStackLayout>
         </ScrollView>

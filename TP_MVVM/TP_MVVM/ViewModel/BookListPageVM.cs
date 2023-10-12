@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MyToolKit;
+using System;
 using System.Windows.Input;
 using ViewModelWrapper;
 
 namespace TP_MVVM.ViewModel
 {
-	public class BookListPageVM
+	public class BookListPageVM : BaseViewModel
 	{
         public ManagerVM ManagerVM { get; private set; }
         public NavigationVM NavigationVM { get; private set; }
