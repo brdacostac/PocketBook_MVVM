@@ -6,17 +6,15 @@ namespace TP_MVVM.ViewModel
 {
 	public class BookListPageVM
 	{
-        public ICommand GetAllBooks { get; set; }
+        public ManagerVM ManagerVM { get; private set; }
+        public NavigationVM NavigationVM { get; private set; }
 
-        // public BookListPageVM(ManagerVM managerVM, NavigationVM navigationVM)
-        //	{
-        //		GetAllBooks = managerVM.GetBooksCommand;
-        //	}
 
-       
-        public BookListPageVM(ManagerVM managerVM)
+
+        public BookListPageVM(ManagerVM managerVM, NavigationVM navigationVM)
         {
-        	GetAllBooks = managerVM.GetBooksCommand;
+            ManagerVM = managerVM;
+            NavigationVM = navigationVM;
        	}
 
 

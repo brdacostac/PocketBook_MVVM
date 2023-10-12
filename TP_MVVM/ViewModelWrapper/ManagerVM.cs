@@ -53,19 +53,27 @@ namespace ViewModelWrapper
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
             : base(new Manager(libraryManager, userLibraryManager))
         {
-            GetBooksCommand = new Command(async () =>
-            {
-                var result = await Model.GetBooksFromCollection(Index, Count, "");
-                NbBooks = (int)result.count;
-                NbPages = (NbBooks / Count);
-                books.Clear();
-
-                var booksVM = result.books.Select(book => new BookVM(book));
-                foreach (var book in booksVM)
-                {
-                    books.Add(book);
-                }
-            });
+            GetBooksCommand = new RelayCommand(async () => GetBooksFromCollection());
+            
+            
         }
+
+
+        private async Task GetBooksFromCollection()
+        {
+            var result = await Model.GetBooksFromCollection(Index, Count, "");
+            NbBooks = (int)result.count;
+            NbPages = (NbBooks / Count);
+            books.Clear();
+
+            var booksVM = result.books.Select(book => new BookVM(book));
+            foreach (var book in booksVM)
+            {
+                books.Add(book);
+            }
+            OnPropertyChanged(nameof (Books));
+        }
+
+
     }
 }
