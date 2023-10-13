@@ -28,6 +28,7 @@ namespace TP_MVVM
                 .AddSingleton<MainPage>()
                 .AddSingleton<MyList>()
                 .AddSingleton<BookDetailPageVM>()
+                .AddSingleton<BookListPageVM>()
                 .AddSingleton<ILibraryManager, LibraryStub>()
                 .AddSingleton<IUserLibraryManager, UserLibraryStub>()
                 .AddSingleton<Manager>()

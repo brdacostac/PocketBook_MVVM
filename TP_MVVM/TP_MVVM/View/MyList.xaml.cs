@@ -19,16 +19,9 @@ public partial class MyList : ContentPage
         }
     }
 
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
-
-        BookListPageVM.ManagerVM.GetBooksCommand.Execute(null);
-    }
+    
     public MyList()
 	{
-        
-
         InitializeComponent();
     }
 
