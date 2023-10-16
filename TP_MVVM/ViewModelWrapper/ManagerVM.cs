@@ -39,12 +39,13 @@ namespace ViewModelWrapper
             set => count = value;
         }
 
-        public readonly ObservableCollection<BookVM> books = new ObservableCollection<BookVM>();
+        public readonly ObservableCollection<BookVM> books = new ();
 
 
-        public ObservableCollection<BookVM> Books
+        public ReadOnlyObservableCollection<BookVM> Books
         {
-            get => books;
+            get;
+            set;
         }
 
         public ICommand GetBooksCommand { get; set; }
@@ -53,6 +54,7 @@ namespace ViewModelWrapper
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
             : base(new Manager(libraryManager, userLibraryManager))
         {
+            Books = new(books);
             GetBooksCommand = new RelayCommand(async () => GetBooksFromCollection());
             
             

@@ -5,7 +5,7 @@ namespace MyToolKit
 {
 
     public class RelayCommand<T> : ICommand
-	{
+    {
 
 
         private readonly Action<T> execute;
@@ -20,49 +20,22 @@ namespace MyToolKit
         }
 
 
-        public event EventHandler? CanExecutedChanged;
+        public event EventHandler? CanExecuteChanged;
 
-        public void Exeute(object? parameter)
+        public bool CanExecute(object? parameter)
+        {
+            T param = (T)parameter;
+            return canExecute(param);
+        }
+
+        public void Execute(object? parameter)
         {
             T param = (T)parameter;
             execute(param);
         }
 
-        public bool CanExecute(object? parameter)
-        {
-            T param = (T)parameter;
-            return CanExecute(param);
-        }
+        public void RefreshCommand() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 
-        public void RefreshCommand() => CanExecutedChanged?.Invoke(this, EventArgs.Empty);
-
-
-
-        event EventHandler ICommand.CanExecuteChanged
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-
-        bool ICommand.CanExecute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
-
-        void ICommand.Execute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
-
-        
     }
 
     public class RelayCommand : RelayCommand<object>
