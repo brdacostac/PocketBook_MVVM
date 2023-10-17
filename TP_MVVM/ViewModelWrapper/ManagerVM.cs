@@ -23,20 +23,20 @@ namespace ViewModelWrapper
         public int NbBooks
         {
             get => nbBooks;
-            set => SetProperty(ref nbBooks, value);
+            set => SetProperty(ref nbBooks, value); //on property changed pour nb pages
         }
 
         
         public int NbPages
         {
-            get => NbPages;
+            get => nbPages;
             set => SetProperty(ref nbPages, value);
         }
 
         public int Count
         {
             get => count;
-            set => count = value;
+            set => count = value; //on property changed pour nb pages
         }
 
         public readonly ObservableCollection<BookVM> books = new ();
@@ -56,8 +56,7 @@ namespace ViewModelWrapper
         {
             Books = new(books);
             GetBooksCommand = new RelayCommand(async () => GetBooksFromCollection());
-            
-            
+                  
         }
 
 
@@ -73,9 +72,7 @@ namespace ViewModelWrapper
             {
                 books.Add(book);
             }
-            OnPropertyChanged(nameof (Books));
         }
-
 
     }
 }

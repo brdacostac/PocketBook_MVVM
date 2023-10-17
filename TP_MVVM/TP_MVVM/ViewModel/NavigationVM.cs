@@ -14,12 +14,14 @@ namespace TP_MVVM.ViewModel
         public ICommand NavigateToBookDetail { get; set; }
         public ICommand NavigateToEmprunt { get; set; }
         public ICommand NavigateToAuteurs { get; set; }
+        public IServiceProvider Provider { get; set; }
 
 
         public INavigation Navigation => (App.Current as App).MainPage.Navigation;
 
-        public NavigationVM() {
-            NavigateToBooksCommand = new Command(async () => await Navigation.PushAsync(new MyList()));
+        public NavigationVM(IServiceProvider provider) {
+            Provider = provider;
+            NavigateToBooksCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<MyList>()));
             NavigateToBookDetail = new Command(async () => await Navigation.PushAsync(new BookDetail()));
             NavigateToEmprunt = new Command(async () => await Navigation.PushAsync(new Emprunts()));
             NavigateToAuteurs = new Command(async () => await Navigation.PushAsync(new Auteurs()));

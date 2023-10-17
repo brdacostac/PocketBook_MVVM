@@ -13,6 +13,7 @@ namespace TP_MVVM
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
@@ -35,7 +36,7 @@ namespace TP_MVVM
                 .AddSingleton<ManagerVM>();
 
 
-
+            
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
