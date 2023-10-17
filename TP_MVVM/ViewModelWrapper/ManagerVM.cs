@@ -23,7 +23,11 @@ namespace ViewModelWrapper
         public int NbBooks
         {
             get => nbBooks;
-            set => SetProperty(ref nbBooks, value); //on property changed pour nb pages
+            set
+            {
+                SetProperty(ref nbBooks, value);
+                OnPropertyChanged(nameof(nbPages));
+            }
         }
 
         
@@ -36,7 +40,11 @@ namespace ViewModelWrapper
         public int Count
         {
             get => count;
-            set => count = value; //on property changed pour nb pages
+            set
+            {
+                SetProperty(ref count, value);
+                OnPropertyChanged(nameof(nbPages));
+            } 
         }
 
         public readonly ObservableCollection<BookVM> books = new ();
@@ -64,7 +72,7 @@ namespace ViewModelWrapper
         {
             var result = await Model.GetBooksFromCollection(Index, Count, "");
             NbBooks = (int)result.count;
-            NbPages = (NbBooks / Count);
+            NbPages = ((NbBooks-1)/Count)+1;
             books.Clear();
 
             var booksVM = result.books.Select(book => new BookVM(book));

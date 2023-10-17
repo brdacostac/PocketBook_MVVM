@@ -16,7 +16,7 @@
             <VerticalStackLayout
                 VerticalOptions="Start">
                 
-                <!--<Grid BackgroundColor="#f6f6f6" Padding="5">
+                <Grid BackgroundColor="#f6f6f6" Padding="5">
                         <Label
                         Style="{StaticResource CustomLabelStyle}"
                         Text="Alain Damasio"
@@ -25,7 +25,7 @@
                         Margin="10,0,0,0"
                         HorizontalOptions="StartAndExpand"
                         FontAttributes="Bold"/>
-                </Grid>-->
+                </Grid>
 
       
 
@@ -35,14 +35,9 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
-                            <!--<StackLayout Orientation="Horizontal" >
+                            <StackLayout Orientation="Horizontal" >
                                 <Grid>
-                                    <Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">
 
-                                        <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
-                                            <Image Source="{Binding BookImage, Source={x:Reference MyList}}" Aspect="AspectFit" WidthRequest="100" HeightRequest="140" />
-                                        </Border>
-                                    </Border>
                                     <AbsoluteLayout>
                                         <Image Source="bookmark_fill.png" WidthRequest="18" AbsoluteLayout.LayoutBounds="0.1, 1.22, 0.5, 0.5" AbsoluteLayout.LayoutFlags="All">
                                             <Image.Behaviors>
@@ -55,8 +50,8 @@
                                 <StackLayout Orientation="Vertical" >
                                     <Label Text="{Binding Title}" Style="{StaticResource CustomLabelStyle}" FontAttributes="Bold" FontSize="17" Margin="10,10,0,0" />
                                 </StackLayout>
-                            </StackLayout>-->
-                            <Label Text="Texte" FontAttributes="Bold" FontSize="17" Margin="10,10,0,0" />
+                            </StackLayout>
+                            
 
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
