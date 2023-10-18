@@ -10,7 +10,7 @@
              Title="MyList">
     
 
-    <Grid RowDefinitions="Auto, Auto">
+    <Grid RowDefinitions="Auto, *, Auto">
         <local:CustomHeader Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
@@ -73,7 +73,16 @@
                     
                 </CollectionView>
 
+                
+                
             </VerticalStackLayout>
         </ScrollView>
+        <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="2" HeightRequest="50">
+            <ImageButton Source="chevron_right.png" Rotation="180"/>
+            <Label Text="{Binding BookListPageVM.ManagerVM.Index}"/>
+            <Label Text="/"/>
+            <Label Text="{Binding BookListPageVM.ManagerVM.NbPages}"/>
+            <ImageButton Source="chevron_right.png"/>
+        </HorizontalStackLayout>
     </Grid>
 </ContentPage>
