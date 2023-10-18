@@ -56,6 +56,14 @@ namespace ViewModelWrapper
             set;
         }
 
+        private IEnumerable<IGrouping<string, BookVM>> groupedBooks;
+
+        public IEnumerable<IGrouping<string, BookVM>> GroupedBooks
+        {
+            get => groupedBooks;
+            set => SetProperty(ref groupedBooks, value);
+        }
+
         public ICommand GetBooksCommand { get; set; }
 
 
@@ -80,7 +88,11 @@ namespace ViewModelWrapper
             {
                 books.Add(book);
             }
+
+            GroupedBooks = Books.GroupBy(b => b.Author).OrderBy(group => group.Key);
+
         }
+
 
     }
 }

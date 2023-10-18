@@ -15,28 +15,40 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 VerticalOptions="Start">
-                
-                <Grid BackgroundColor="#f6f6f6" Padding="5">
-                        <Label
-                        Style="{StaticResource CustomLabelStyle}"
-                        Text="Alain Damasio"
-                        FontSize="17"
-                        TextColor="Grey"
-                        Margin="10,0,0,0"
-                        HorizontalOptions="StartAndExpand"
-                        FontAttributes="Bold"/>
-                </Grid>
+              
 
-      
-
-                <CollectionView ItemsSource="{Binding BookListPageVM.ManagerVM.Books}"
+                <CollectionView ItemsSource="{Binding BookListPageVM.ManagerVM.GroupedBooks}"
                         SelectionMode="Single"
-                        >
+                        IsGrouped="True">
+
+                    <CollectionView.GroupHeaderTemplate>
+                        <DataTemplate>
+                        <Grid BackgroundColor="#f6f6f6" Padding="5"
+                                HorizontalOptions="Fill"
+                                RowDefinitions="30">
+                            <Label  Text="{Binding Key}"
+                                    Style="{StaticResource CustomLabelStyle}"
+                                    FontSize="17"
+                                    TextColor="Grey"
+                                    Margin="10,0,0,0"
+                                    HorizontalOptions="StartAndExpand"
+                                    FontAttributes="Bold"/>
+                        </Grid>
+                    </DataTemplate>
+
+                    </CollectionView.GroupHeaderTemplate>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
                             <StackLayout Orientation="Horizontal" >
                                 <Grid>
+
+                                    <Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">    
+                                        <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
+                                            <Image Source="{Binding ImageSmall}" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
+                                        </Border>
+                                    </Border>
+
 
                                     <AbsoluteLayout>
                                         <Image Source="bookmark_fill.png" WidthRequest="18" AbsoluteLayout.LayoutBounds="0.1, 1.22, 0.5, 0.5" AbsoluteLayout.LayoutFlags="All">
@@ -49,6 +61,9 @@
                                 </Grid>
                                 <StackLayout Orientation="Vertical" >
                                     <Label Text="{Binding Title}" Style="{StaticResource CustomLabelStyle}" FontAttributes="Bold" FontSize="17" Margin="10,10,0,0" />
+                                    <Label Text="{Binding Author}"  Style="{StaticResource CustomLabelStyle}" FontSize="14" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" />
+                                    <Label Text="{Binding Status}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey" FontSize="14" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" />
+
                                 </StackLayout>
                             </StackLayout>
                             
