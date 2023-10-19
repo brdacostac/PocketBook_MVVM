@@ -17,9 +17,13 @@
                 VerticalOptions="Start">
               
 
-                <CollectionView ItemsSource="{Binding BookListPageVM.ManagerVM.GroupedBooks}"
+                <CollectionView
+                        x:Name="bookCollection"
+                        ItemsSource="{Binding BookListPageVM.ManagerVM.GroupedBooks}"
                         SelectionMode="Single"
-                        IsGrouped="True">
+                        IsGrouped="True"
+                        SelectionChangedCommand="{Binding BookListPageVM.LoadBookAndNavigateCommand}"
+                        SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference bookCollection}}">
 
                     <CollectionView.GroupHeaderTemplate>
                         <DataTemplate>

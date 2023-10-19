@@ -11,6 +11,17 @@ namespace ViewModelWrapper
     public class BookVM : BaseViewModel<Book>
     {
 
+        public string Id
+        {
+            get => Model.Id;
+            set
+            {
+                if (Model == null)
+                    return;
+                SetProperty(Model?.Id, value, v => Model.Id = v);
+            }
+        }
+
         public string Title
         {
           get => Model.Title;

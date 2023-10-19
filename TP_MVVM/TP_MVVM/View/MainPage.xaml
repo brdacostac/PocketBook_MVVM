@@ -23,11 +23,7 @@
                     Style="{StaticResource CustomLabelStyle}"/>
 
 
-                <content:buttonMenu CommandName="{Binding GetBookAndNavigate.GetBooksAndNavigateCommand}" IconPath="tray_fill.png" Title="Tous" CountBook="45">
-                    <!--<content:buttonMenu.GestureRecognizers>
-                        <TapGestureRecognizer></TapGestureRecognizer>
-                    </content:buttonMenu.GestureRecognizers>-->
-                </content:buttonMenu>
+                <content:buttonMenu CommandName="{Binding GetBookAndNavigate.GetBooksAndNavigateCommand}" IconPath="tray_fill.png" Title="Tous" CountBook="45"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToEmprunt}" IconPath="person_badge_clock_fill.png" Title="En prêt" CountBook="1"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="arrow_forward.png" Title="À lire plus tard"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="eyeglasses.png" Title="Statut de lecture"/>

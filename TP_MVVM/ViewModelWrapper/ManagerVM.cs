@@ -13,6 +13,8 @@ namespace ViewModelWrapper
         private int index = 1;
         private int nbBooks;
         private int count = 10;
+        private readonly ObservableCollection<BookVM> books = new();
+        private BookVM book;
 
         public int Index
         {
@@ -47,14 +49,21 @@ namespace ViewModelWrapper
             } 
         }
 
-        public readonly ObservableCollection<BookVM> books = new ();
-
 
         public ReadOnlyObservableCollection<BookVM> Books
         {
             get;
             set;
         }
+
+        public BookVM CurrentBook
+        {
+            get => book;
+            set => SetProperty(ref book, value);
+
+        }
+
+
 
         private IEnumerable<IGrouping<string, BookVM>> groupedBooks;
 
@@ -65,6 +74,8 @@ namespace ViewModelWrapper
         }
 
         public ICommand GetBooksCommand { get; set; }
+
+        public ICommand GetBookCommand { get; set; }
 
         public ICommand NextPageCommand { get; set; }
 
@@ -79,7 +90,7 @@ namespace ViewModelWrapper
             GetBooksCommand = new RelayCommand(async () => GetBooksFromCollection());
             NextPageCommand = new RelayCommand(async () => NextPage());
             PreviousPageCommand = new RelayCommand(async () => PreviousPage());
-
+            GetBookCommand = new RelayCommand<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
 
         }
 
@@ -100,6 +111,14 @@ namespace ViewModelWrapper
             GroupedBooks = Books.GroupBy(b => b.Author).OrderBy(group => group.Key);
 
         }
+
+        private async Task GetBookById(BookVM book)
+        {
+            var result = await Model.GetBookById(book.Id);
+            CurrentBook = new BookVM(result);
+
+        }
+
 
         public async Task NextPage()
         {

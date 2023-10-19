@@ -11,6 +11,7 @@ namespace TP_MVVM.ViewModel
         public NavigationVM NavigationVM { get; private set; }
 
         public ICommand GetBooksAndNavigateCommand { get; set; }
+        public ICommand LoadBookAndNavigateCommand { get; set; }
 
         private void GetBooksAndNavigate ()
         {
@@ -18,6 +19,12 @@ namespace TP_MVVM.ViewModel
             NavigationVM.NavigateToBooksCommand.Execute(null);
         }
 
+        private void LoadBookAndNavigate(BookVM bookVM)
+        {
+            ManagerVM.GetBookCommand.Execute(bookVM);
+            NavigationVM.NavigateToBookDetailCommand.Execute(null);
+
+        }
 
 
 
@@ -27,6 +34,7 @@ namespace TP_MVVM.ViewModel
             NavigationVM = navigationVM;
 
             GetBooksAndNavigateCommand = new Command(GetBooksAndNavigate);
+            LoadBookAndNavigateCommand = new Command<BookVM>(LoadBookAndNavigate);
 
         }
 
