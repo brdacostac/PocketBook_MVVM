@@ -78,11 +78,20 @@
             </VerticalStackLayout>
         </ScrollView>
         <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="2" HeightRequest="50">
-            <ImageButton Source="chevron_right.png" Rotation="180"/>
-            <Label Text="{Binding BookListPageVM.ManagerVM.Index}"/>
-            <Label Text="/"/>
-            <Label Text="{Binding BookListPageVM.ManagerVM.NbPages}"/>
-            <ImageButton Source="chevron_right.png"/>
+            <ImageButton Source="chevron_right.png" Rotation="180" Command="{Binding BookListPageVM.ManagerVM.PreviousPageCommand}">
+                <ImageButton.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="Red" />
+                </ImageButton.Behaviors>
+            </ImageButton>
+
+            <Label Text="{Binding BookListPageVM.ManagerVM.Index}" VerticalOptions="Center" FontSize="20" TextColor="Red"/>
+            <Label Text="/" FontSize="20" VerticalOptions="Center" TextColor="Red"/>
+            <Label Text="{Binding BookListPageVM.ManagerVM.NbPages}" VerticalOptions="Center"  FontSize="20"  TextColor="Red"/>
+            <ImageButton Source="chevron_right.png" Command="{Binding BookListPageVM.ManagerVM.NextPageCommand}">
+                <ImageButton.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="Red" />
+                </ImageButton.Behaviors>
+            </ImageButton>
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>

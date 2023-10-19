@@ -10,7 +10,7 @@ namespace ViewModelWrapper
     {
 
         private int nbPages;
-        private int index;
+        private int index = 1;
         private int nbBooks;
         private int count = 10;
 
@@ -66,19 +66,27 @@ namespace ViewModelWrapper
 
         public ICommand GetBooksCommand { get; set; }
 
+        public ICommand NextPageCommand { get; set; }
+
+        public ICommand PreviousPageCommand { get; set; }
+
+
 
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
             : base(new Manager(libraryManager, userLibraryManager))
         {
             Books = new(books);
             GetBooksCommand = new RelayCommand(async () => GetBooksFromCollection());
-                  
+            NextPageCommand = new RelayCommand(async () => NextPage());
+            PreviousPageCommand = new RelayCommand(async () => PreviousPage());
+
+
         }
 
 
         private async Task GetBooksFromCollection()
         {
-            var result = await Model.GetBooksFromCollection(Index, Count, "");
+            var result = await Model.GetBooksFromCollection(Index -1, Count, "");
             NbBooks = (int)result.count;
             NbPages = ((NbBooks-1)/Count)+1;
             books.Clear();
@@ -91,6 +99,20 @@ namespace ViewModelWrapper
 
             GroupedBooks = Books.GroupBy(b => b.Author).OrderBy(group => group.Key);
 
+        }
+
+        public async Task NextPage()
+        {
+            if(Index != NbPages)
+                Index++;
+            await GetBooksFromCollection();
+        }
+
+        public async Task PreviousPage()
+        {
+            if(Index != 1)
+                Index--;
+            await GetBooksFromCollection();
         }
 
 
