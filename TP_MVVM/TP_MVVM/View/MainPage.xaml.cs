@@ -10,13 +10,13 @@ namespace TP_MVVM.View
        
         public NavigationVM Navigater {get; private set;}
 
-        public BookListPageVM BookListPageVM { get; private set; }
+        public MainPageVM MainPageVM { get; private set; }
 
 
-        public MainPage(BookListPageVM BookListPageVM)
+        public MainPage(MainPageVM MainPageVM)
         {
             InitializeComponent();
-            this.BookListPageVM = BookListPageVM;
+            this.MainPageVM = MainPageVM;
             BindingContext = this;
             
         }
@@ -28,7 +28,6 @@ namespace TP_MVVM.View
         }
 
        
-
         private void CustomHeader_PopupRequested(object sender, EventArgs e)
         {
 

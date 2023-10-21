@@ -7,6 +7,17 @@ namespace ViewModelWrapper
 	public class AuthorVM : BaseViewModel<Author>
 	{
 
+        private int nbBooksByAuthor { get; set; }
+
+        public int NbBooksByAuthor
+        {
+            get => nbBooksByAuthor;
+            set
+            {
+                nbBooksByAuthor = value;
+            }
+        }
+
         public string Name
         {
             get => Model.Name;

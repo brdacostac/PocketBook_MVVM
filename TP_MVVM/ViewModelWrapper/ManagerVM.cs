@@ -14,6 +14,7 @@ namespace ViewModelWrapper
         private int nbBooks;
         private int count = 10;
         private readonly ObservableCollection<BookVM> books = new();
+        private readonly ObservableCollection<AuthorVM> authors = new();
         private BookVM book;
 
         public int Index
@@ -56,6 +57,11 @@ namespace ViewModelWrapper
             set;
         }
 
+        public ObservableCollection<AuthorVM> Authors
+        {
+            get => authors;
+        }
+
         public BookVM CurrentBook
         {
             get => book;
@@ -72,6 +78,8 @@ namespace ViewModelWrapper
             get => groupedBooks;
             set => SetProperty(ref groupedBooks, value);
         }
+
+        public ICommand GetAuthorsCommand { get; set; }
 
         public ICommand GetBooksCommand { get; set; }
 
@@ -91,6 +99,7 @@ namespace ViewModelWrapper
             NextPageCommand = new RelayCommand(async () => NextPage());
             PreviousPageCommand = new RelayCommand(async () => PreviousPage());
             GetBookCommand = new RelayCommand<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
+            GetAuthorsCommand = new RelayCommand(async () => GetAllAuthors());
 
         }
 
@@ -119,6 +128,24 @@ namespace ViewModelWrapper
 
         }
 
+        private async Task GetAllAuthors()
+        {
+            var result = await Model.GetBooksFromCollection(0, 999);
+            IEnumerable<Book> allbooks = result.books;
+            books.Clear();
+            authors.Clear();
+
+            var booksVM = result.books.Select(book => new BookVM(book));
+            foreach (var book in booksVM)
+            {
+                foreach (var author in book.Authors)
+                {
+                    authors.Add(author);
+                    author.NbBooksByAuthor++;
+                }
+            }
+
+        }
 
         public async Task NextPage()
         {

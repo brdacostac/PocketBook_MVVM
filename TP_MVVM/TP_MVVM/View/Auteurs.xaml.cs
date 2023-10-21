@@ -1,31 +1,17 @@
+using TP_MVVM.ViewModel;
+
 namespace TP_MVVM.View;
 
 public partial class Auteurs : ContentPage
 {
-	public Auteurs()
+
+    public AuteursPageVM AuteursPageVM { get; private set; }
+
+    public Auteurs(AuteursPageVM auteursPageVM)
 	{
 		InitializeComponent();
+        this.AuteursPageVM = auteursPageVM;
+        BindingContext = this;
 
-        var items = new List<object>
-        {
-            new { BookAuteur = "Alain Damasio", CountBook = 3 },
-            new { BookAuteur = "Cixin Liu", CountBook = 2 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 2 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 2 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 2 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 2 },
-            new { BookAuteur = "Bruno Cunha", CountBook = 6 },
-
-        };
-
-
-        listView.ItemsSource = items;
     }
 }

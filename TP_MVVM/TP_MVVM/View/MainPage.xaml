@@ -23,7 +23,7 @@
                     Style="{StaticResource CustomLabelStyle}"/>
 
 
-                <content:buttonMenu CommandName="{Binding BookListPageVM.GetBooksAndNavigateCommand}" IconPath="tray_fill.png" Title="Tous" CountBook="{Binding BookListPageVM.ManagerVM.NbBooks}"/>
+                <content:buttonMenu CommandName="{Binding MainPageVM.GetBooksAndNavigateCommand}" IconPath="tray_fill.png" Title="Tous" CountBook="{Binding MainPageVM.ManagerVM.NbBooks}"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToEmprunt}" IconPath="person_badge_clock_fill.png" Title="En prêt" CountBook="1"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="arrow_forward.png" Title="À lire plus tard"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="eyeglasses.png" Title="Statut de lecture"/>
@@ -40,7 +40,7 @@
                     FontAttributes="Bold"
                     Style="{StaticResource CustomLabelStyle}"/>
 
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="person_fill.png" Title="Auteur"/>
+                <content:buttonMenu CommandName="{Binding MainPageVM.GetAuthorsAndNavigateCommand}" IconPath="person_fill.png" Title="Auteur"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="calendar.png" Title="Date de publication"/>
                 <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="sparkles.png" Title="Note"/>
 

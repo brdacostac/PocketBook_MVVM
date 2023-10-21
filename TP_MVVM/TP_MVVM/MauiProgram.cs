@@ -27,7 +27,10 @@ namespace TP_MVVM
             builder.Services
                 .AddSingleton<NavigationVM>()
                 .AddSingleton<MainPage>()
+                .AddSingleton<MainPageVM>()
                 .AddSingleton<MyList>()
+                .AddSingleton<Auteurs>()
+                .AddSingleton<AuteursPageVM>()
                 .AddSingleton<BookDetail>()
                 .AddSingleton<BookDetailPageVM>()
                 .AddSingleton<BookListPageVM>()

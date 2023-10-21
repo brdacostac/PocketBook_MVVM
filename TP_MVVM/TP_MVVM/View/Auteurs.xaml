@@ -10,18 +10,16 @@
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical">
 
-
-
                 <VerticalStackLayout>
                    
                     <Grid ColumnDefinitions="*,Auto">
-                        <SearchBar Grid.Column="0" Placeholder="Rechercher" HeightRequest="70" />
+                        <SearchBar Grid.Column="0" Placeholder="Rechercher" HeightRequest="70"  />
                         <Button Grid.Column="1" Text="Annuler" TextColor="Gray" FontAttributes="Bold" BackgroundColor="White"/>
                     </Grid>
                     
                 </VerticalStackLayout>
 
-                <ListView x:Name="listView" Grid.Row="2" BackgroundColor="#f6f6f6">
+                <ListView x:Name="listView" ItemsSource="{Binding AuteursPageVM.ManagerVM.Authors}" Grid.Row="2" BackgroundColor="#f6f6f6">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -33,9 +31,9 @@
                                         </Image.Behaviors>
                                     </Image>
 
-                                    <Label Text="{Binding BookAuteur}" Style="{StaticResource CustomLabelStyle}" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="{Binding Name}" Style="{StaticResource CustomLabelStyle}" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" FontSize="18" />
 
-                                    <Label Text="{Binding CountBook}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
+                                    <Label Text="{Binding NbBooksByAuthor}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
                                     <Image Source="chevron_right.png" VerticalOptions="CenterAndExpand" Margin="5,0,10,0" WidthRequest="20">
                                         <Image.Behaviors>
