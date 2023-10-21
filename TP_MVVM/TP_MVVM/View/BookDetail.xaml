@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:local="clr-namespace:TP_MVVM.View.Custom"
+             xmlns:content="clr-namespace:TP_MVVM.View.Content"
              x:Class="TP_MVVM.View.BookDetail"
              Title="BookDetail">
     <Grid RowDefinitions=" Auto , *">
@@ -13,7 +14,7 @@
 
 
         <ScrollView Grid.Row="1">
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto" VerticalOptions="Start" RowSpacing="20" ColumnSpacing="20">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto, Auto" VerticalOptions="Start" RowSpacing="20" ColumnSpacing="20">
                 <StackLayout Orientation="Horizontal" Grid.Row="0" >
 
 
@@ -150,42 +151,26 @@
                     <Label Grid.Row="1" Style="{StaticResource CustomLabelStyle}" Grid.Column="1" Text="10 août 2023" Margin="15,0,15,0" HorizontalOptions="End" FontSize="Small"/>
                 </Grid>
 
-                <Grid Grid.Row="8" Margin="0,100,0,0" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
-                    <Image Source="folder.png" Grid.Row="0" Margin="15,0,0,5">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="Red" />
-                        </Image.Behaviors>
-                    </Image>
-                    <Label Grid.Row="0" Style="{StaticResource CustomLabelStyle}" Grid.Column="1"  Text="Déplacer le livre" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
-                </Grid>
-
                 <!-- OPTIONS BUTTONS -->
 
-                <Grid Grid.Row="9" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
-                    <Image Source="plus_circle.png" Grid.Row="0" Margin="15,0,0,5">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="Red" />
-                        </Image.Behaviors>
-                    </Image>
-                    <Label Grid.Row="0" Style="{StaticResource CustomLabelStyle}" Grid.Column="1"  Text="Ajouter à la liste à lire plus tard" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
+                <Grid Grid.Row="8" Margin="0,100,0,0" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                    <content:buttonOptionsBookDetail  IconPath="heart.png" Title="Ajouter aux favoris"/>
+                </Grid>
+
+                <Grid Grid.Row="9"  RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                    <content:buttonOptionsBookDetail  IconPath="folder.png" Title="Déplacer le livre"/>
                 </Grid>
 
                 <Grid Grid.Row="10" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
-                    <Image Source="eyeglasses.png" Grid.Row="0" Margin="15,0,0,5">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="Red" />
-                        </Image.Behaviors>
-                    </Image>
-                    <Label Grid.Row="0" Style="{StaticResource CustomLabelStyle}" Grid.Column="1"  Text="Changer le statut de lecture" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
+                    <content:buttonOptionsBookDetail  IconPath="plus_circle.png" Title="Ajouter à la liste à lire plus tard"/>
                 </Grid>
 
                 <Grid Grid.Row="11" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
-                    <Image Source="person.png" Grid.Row="0" Margin="15,0,0,5">
-                        <Image.Behaviors>
-                            <toolkit:IconTintColorBehavior TintColor="Red" />
-                        </Image.Behaviors>
-                    </Image>
-                    <Label Grid.Row="0" Style="{StaticResource CustomLabelStyle}" Grid.Column="1"  Text="Prêter le livre" Margin="15,0,0,5" FontAttributes="Bold" TextColor="Red" FontSize="Medium"/>
+                    <content:buttonOptionsBookDetail  IconPath="eyeglasses.png" Title="Changer le statut de lecture"/>
+                </Grid>
+
+                <Grid Grid.Row="12" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
+                    <content:buttonOptionsBookDetail  IconPath="person.png" Title="Prêter le livre"/>
                 </Grid>
 
             </Grid>

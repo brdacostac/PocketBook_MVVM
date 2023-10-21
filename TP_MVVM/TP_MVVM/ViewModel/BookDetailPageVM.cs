@@ -1,9 +1,12 @@
-﻿using MyToolKit;
+﻿using CommunityToolkit.Maui.Alerts;
+using Model;
+using MyToolKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using ViewModelWrapper;
 
 namespace TP_MVVM.ViewModel
@@ -13,10 +16,15 @@ namespace TP_MVVM.ViewModel
         public BookVM Book { get; private set; }
         public ManagerVM ManagerVM { get; private set; }
 
+
         public BookDetailPageVM(BookVM bookVM , ManagerVM managerVM)
         {
             Book = bookVM;
             ManagerVM = managerVM;
+
+
         }
+
+
     }
 }

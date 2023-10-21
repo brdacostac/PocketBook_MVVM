@@ -108,6 +108,7 @@ namespace ViewModelWrapper
         public ICommand GetBooksByAuthorCommand { get; set; }
 
 
+
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
             : base(new Manager(libraryManager, userLibraryManager))
         {
@@ -120,8 +121,8 @@ namespace ViewModelWrapper
             SearchCommand = new RelayCommand(SearchAuthors);
             GetBooksByAuthorCommand = new RelayCommand<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
 
-        }
 
+        }
 
 
         private async Task GetBooksByAuthor(AuthorVM author)

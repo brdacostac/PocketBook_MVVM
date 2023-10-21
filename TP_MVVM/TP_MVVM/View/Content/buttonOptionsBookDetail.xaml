@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TP_MVVM.View.Content.buttonOptionsBookDetail"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Name="this">
+    
+        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10" >
+            <Grid.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding CommandName}" CommandParameter="{Binding CommandNameParameter}"></TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+
+        <Image Source="{Binding IconPath, Source={x:Reference this}}" Grid.Row="0" Margin="15,0,0,5">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="Red" />
+                </Image.Behaviors>
+            </Image>
+            <Label Grid.Row="0" Style="{StaticResource CustomLabelStyle}" 
+               Grid.Column="1"  
+               Text="{Binding Title, Source={x:Reference this}}"
+               Margin="15,0,0,5" FontAttributes="Bold" 
+               TextColor="Red" 
+               FontSize="Medium"/>
+        </Grid>
+
+</ContentView>
