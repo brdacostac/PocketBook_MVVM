@@ -51,7 +51,22 @@ namespace ViewModelWrapper
 
         }
 
+        public int NbPages
+        {
+            get => Model.NbPages;
 
+        }
+
+        public Languages Language
+        {
+            get => Model.Language;
+        }
+
+        public string ISBN13
+        {
+            get => Model.ISBN13;
+
+        }
 
         public List<string> Publishers
         {
@@ -62,13 +77,6 @@ namespace ViewModelWrapper
         public DateTime PublishDate
         {
             get => Model.PublishDate;
-            set
-            {
-                if (Model == null)
-                    return;
-                SetProperty(Model.PublishDate, value, v => Model.PublishDate = value);
-
-            }
         }
 
         public string Author => Model.Authors.Count > 0 ? Model.Authors.First().Name : "Auteur inconnu";
