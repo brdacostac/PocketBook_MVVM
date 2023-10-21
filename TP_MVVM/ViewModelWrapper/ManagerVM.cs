@@ -171,14 +171,26 @@ namespace ViewModelWrapper
             authors.Clear();
 
             var booksVM = result.books.Select(book => new BookVM(book));
+
             foreach (var book in booksVM)
             {
                 foreach (var author in book.Authors)
                 {
                     if (string.IsNullOrEmpty(searchText) || author.Name.Contains(searchText))
                     {
-                        authors.Add(author);
-                        author.NbBooksByAuthor++;
+                        var existingAuthor = authors.FirstOrDefault(a => a.Name == author.Name);
+
+
+                        if (existingAuthor != null)
+                        {
+                            // Cette author est deja dans la liste alors on va juste incrementer son nbBooksByAuthor
+                            existingAuthor.NbBooksByAuthor++;
+                        }
+                        else
+                        {
+                            authors.Add(author);
+                            author.NbBooksByAuthor ++;
+                        }
                     }
                 }
             }
