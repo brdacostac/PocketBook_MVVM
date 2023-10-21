@@ -39,11 +39,12 @@ namespace TP_MVVM
                 .AddSingleton<Manager>()
                 .AddSingleton<ManagerVM>()
                 .AddSingleton<Favorites>()
+                .AddSingleton<FavoritesPageVM>()
                 .AddSingleton<Book>()
                 .AddSingleton<BookVM>();
 
 
-            
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

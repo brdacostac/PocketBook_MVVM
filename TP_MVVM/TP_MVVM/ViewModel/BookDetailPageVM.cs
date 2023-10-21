@@ -4,6 +4,7 @@ using MyToolKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -17,7 +18,7 @@ namespace TP_MVVM.ViewModel
 
         public NavigationVM NavigationVM { get; private set; }
 
-        private string favoriteOptionText;
+        private string favoriteOptionText ;
 
         public ICommand AddRemoveFavoritesCommand { get; private set; }
 
@@ -26,19 +27,15 @@ namespace TP_MVVM.ViewModel
             get
             {
                 ManagerVM.GetFavoriteBooksCommand.Execute(null);
-                if (ManagerVM.FavoriteBooks.Any(favoriteBook => favoriteBook.Id == ManagerVM.CurrentBook.Id))
+
+                if (ManagerVM.FavoriteBooks.Any(favoriteBook => favoriteBook.Title == ManagerVM.CurrentBook.Title))
                     return favoriteOptionText = "Supprimer des favoris";
 
                 return favoriteOptionText = "Ajouter aux favoris";
             }
             set
             {
-                if (favoriteOptionText != value)
-                {
-                    favoriteOptionText = value;
-                    OnPropertyChanged(nameof(FavoriteButtonText));
-                }
-                    
+                    SetProperty(ref favoriteOptionText, value);
             }
         }
 

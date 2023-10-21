@@ -19,6 +19,10 @@ namespace TP_MVVM.ViewModel
 
         public ICommand GetAuthorsAndNavigateCommand { get; set; }
 
+        public ICommand GetFavoritesAndNavigateCommand { get; set; }
+
+       
+
 
         private void GetBooksAndNavigate()
         {
@@ -32,6 +36,12 @@ namespace TP_MVVM.ViewModel
             NavigationVM.NavigateToAuthorsCommand.Execute(null);
         }
 
+        private void GetFavoritesAndNavigate()
+        {
+            ManagerVM.GetFavoriteBooksCommand.Execute(null);
+            NavigationVM.NavigateToFavoritesCommand.Execute(null);
+        }
+
 
         public MainPageVM(ManagerVM managerVM, NavigationVM navigationVM)
         {
@@ -40,6 +50,7 @@ namespace TP_MVVM.ViewModel
 
             GetBooksAndNavigateCommand = new RelayCommand(GetBooksAndNavigate);
             GetAuthorsAndNavigateCommand = new RelayCommand(GetAuthorsAndNavigate);
+            GetFavoritesAndNavigateCommand = new RelayCommand(GetFavoritesAndNavigate);
         }
     }
 }
