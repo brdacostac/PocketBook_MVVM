@@ -22,7 +22,7 @@
                     <Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">
 
                         <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
-                            <Image x:Name="bookImage" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
+                                <Image Source="{Binding BookDetailPageVM.ManagerVM.CurrentBook.ImageLarge}" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
                         </Border>
                     </Border>
 
@@ -38,7 +38,7 @@
 
                     <StackLayout Orientation="Vertical" >
 
-                        <Label x:Name="bookName" Style="{StaticResource CustomLabelStyle}" FontAttributes="Bold" FontSize="17" Margin="10,10,0,0" />
+                        <Label Text="{Binding BookDetailPageVM.ManagerVM.CurrentBook.Title}" Style="{StaticResource CustomLabelStyle}" FontAttributes="Bold" FontSize="17" Margin="10,10,0,0" />
 
 
                         <HorizontalStackLayout VerticalOptions="EndAndExpand" Margin="10,0,0,20">
@@ -85,7 +85,7 @@
 
                 <Grid Grid.Row="2" RowDefinitions="Auto, Auto" RowSpacing="10">
                     <Label Grid.Row="0" Style="{StaticResource CustomLabelStyle}" Text="Auteur" Margin="15,0,0,0" FontAttributes="Bold" FontSize="Small"/>
-                    <Label Grid.Row="1" Style="{StaticResource CustomLabelStyle}" Text="Alain Damasio" Margin="15,0,0,0" FontSize="Medium"/>
+                    <Label Grid.Row="1" Style="{StaticResource CustomLabelStyle}" Text="{Binding BookDetailPageVM.ManagerVM.CurrentBook.Author}" Margin="15,0,0,0" FontSize="Medium"/>
                 </Grid>
 
                 <Grid Grid.Row="3" RowDefinitions="Auto, Auto" RowSpacing="10">

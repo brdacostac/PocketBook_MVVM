@@ -34,7 +34,9 @@ namespace TP_MVVM
                 .AddSingleton<ILibraryManager, LibraryStub>()
                 .AddSingleton<IUserLibraryManager, UserLibraryStub>()
                 .AddSingleton<Manager>()
-                .AddSingleton<ManagerVM>();
+                .AddSingleton<ManagerVM>()
+                .AddSingleton<Book>()
+                .AddSingleton<BookVM>();
 
 
             

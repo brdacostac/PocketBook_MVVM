@@ -8,13 +8,15 @@ using ViewModelWrapper;
 
 namespace TP_MVVM.ViewModel
 {
-    class BookDetailPageVM : BaseViewModel
+    public class BookDetailPageVM : BaseViewModel
     {
         public BookVM Book { get; private set; }
+        public ManagerVM ManagerVM { get; private set; }
 
-        public BookDetailPageVM(BookVM bookVM)
+        public BookDetailPageVM(BookVM bookVM , ManagerVM managerVM)
         {
             Book = bookVM;
+            ManagerVM = managerVM;
         }
     }
 }

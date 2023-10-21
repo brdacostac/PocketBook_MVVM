@@ -5,21 +5,15 @@ namespace TP_MVVM.View;
 
 public partial class BookDetail : ContentPage
 {
+    public BookDetailPageVM BookDetailPageVM { get; set; }
 
 
 
-	public BookDetail()
+    public BookDetail(BookDetailPageVM bookDetailPageVM)
 	{
 		InitializeComponent();
-		BindingContext = this;
-
-
-		string BookImage = "Resources/Images/book1.png";
-		string BookName = "La horde du contrevent";
-
-		bookImage.Source = BookImage;
-		bookName.Text = BookName;
-
+        BookDetailPageVM = bookDetailPageVM;
+        BindingContext = this;
 
     }
 }

@@ -10,13 +10,13 @@ namespace TP_MVVM.View
        
         public NavigationVM Navigater {get; private set;}
 
-        public BookListPageVM GetBookAndNavigate { get; private set; }
+        public BookListPageVM BookListPageVM { get; private set; }
 
 
-        public MainPage(BookListPageVM GetBookAndNavigate)
+        public MainPage(BookListPageVM BookListPageVM)
         {
             InitializeComponent();
-            this.GetBookAndNavigate = GetBookAndNavigate;
+            this.BookListPageVM = BookListPageVM;
             BindingContext = this;
             
         }

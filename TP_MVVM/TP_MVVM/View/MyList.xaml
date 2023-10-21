@@ -8,10 +8,10 @@
              xmlns:content="clr-namespace:TP_MVVM.View.Content"
              x:Class="TP_MVVM.View.MyList"
              Title="MyList">
-    
+
 
     <Grid RowDefinitions="Auto, *, Auto">
-        <local:CustomHeader Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+        <local:CustomHeaderReturn  TitleLastPage="Mes Livres" TitleCurrentPage="Tous" IsArrowBtnVisible="True" IsPlusBtnVisible="True" Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 VerticalOptions="Start">
@@ -49,7 +49,7 @@
 
                                     <Border  WidthRequest="90" HeightRequest="152" StrokeShape="RoundRectangle 2,2,2,2" Margin="15,0,0,15" StrokeThickness="3">    
                                         <Border WidthRequest="90" StrokeShape="RoundRectangle 2" HeightRequest="140" StrokeThickness="3" VerticalOptions="Start">
-                                            <Image Source="{Binding ImageSmall}" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
+                                            <Image Source="{Binding ImageMedium}" Aspect="AspectFit" WidthRequest="100" HeightRequest="140"  />
                                         </Border>
                                     </Border>
 

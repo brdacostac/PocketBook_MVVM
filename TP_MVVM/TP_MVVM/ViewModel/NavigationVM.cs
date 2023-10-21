@@ -25,7 +25,6 @@ namespace TP_MVVM.ViewModel
             Provider = provider;
             NavigateToBooksCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<MyList>()));
             NavigateToBookDetailCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<BookDetail>()));
-            NavigateToBookDetail = new Command(async () => await Navigation.PushAsync(new BookDetail()));
             NavigateToEmprunt = new Command(async () => await Navigation.PushAsync(new Emprunts()));
             NavigateToAuteurs = new Command(async () => await Navigation.PushAsync(new Auteurs()));
         }

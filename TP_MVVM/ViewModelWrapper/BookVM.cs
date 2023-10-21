@@ -39,16 +39,24 @@ namespace ViewModelWrapper
 
         }
 
+        public string ImageMedium
+        {
+            get => Model.ImageMedium;
+
+        }
+
+        public string ImageLarge
+        {
+            get => Model.ImageLarge;
+
+        }
+
+
+
         public List<string> Publishers
         {
             get => Model.Publishers;
-            set
-            {
-                if (Model == null)
-                    return;
-                SetProperty(Model.Publishers, value, v => Model.Publishers = value);
 
-            }
         }
 
         public DateTime PublishDate
