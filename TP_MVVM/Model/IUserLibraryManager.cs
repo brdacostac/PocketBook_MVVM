@@ -16,11 +16,10 @@ namespace Model
 		Task<bool> AddToFavorites(string bookId);
 		Task<bool> RemoveFromFavorites(Book book);
 		Task<bool> RemoveFromFavorites(string bookId);
-
         Task<Tuple<long, IEnumerable<Book>>> GetFavoritesBooks(int index, int count);
 
 
-        Task<Book> UpdateBook(Book updatedBook);
+		Task<Book> UpdateBook(Book updatedBook);
 
 		Task<Contact> AddContact(Contact contact);
 		Task<bool> RemoveContact(Contact contact);

@@ -15,8 +15,10 @@ namespace ViewModelWrapper
         private int count = 10;
         private readonly ObservableCollection<BookVM> books = new();
         private readonly ObservableCollection<AuthorVM> authors = new();
+        private readonly ObservableCollection<BookVM> favoriteBooks = new();
         private BookVM book;
         private string searchText;
+        private bool isFavorite;
 
         public int Index
         {
@@ -34,7 +36,17 @@ namespace ViewModelWrapper
             }
         }
 
-        
+        public ObservableCollection<BookVM> FavoriteBooks
+        {
+            get => favoriteBooks;
+        }
+
+        public bool IsFavorite
+        {
+            get => isFavorite;
+            set => SetProperty(ref isFavorite, value);
+        }
+
 
         public string SearchText
         {
@@ -107,6 +119,7 @@ namespace ViewModelWrapper
 
         public ICommand GetBooksByAuthorCommand { get; set; }
 
+        public ICommand CheckIsFavoriteCommand { get; private set; }
 
 
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
@@ -120,10 +133,50 @@ namespace ViewModelWrapper
             GetAuthorsCommand = new RelayCommand<string>(async (searchText) => await GetAllAuthors(searchText));
             SearchCommand = new RelayCommand(SearchAuthors);
             GetBooksByAuthorCommand = new RelayCommand<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
-
+            CheckIsFavoriteCommand = new RelayCommand<BookVM>(bookVM => CheckIsFavorite(bookVM));
 
         }
 
+        private async Task GetFavoriteBooks()
+        {
+            var result = await Model.GetFavoritesBooks(0, 999);
+            IEnumerable<Book> allbooks = result.books;
+            books.Clear();
+            favoriteBooks.Clear();
+            foreach (var book in allbooks.Select(book => new BookVM(book)))
+            {
+                favoriteBooks.Add(book);
+            }
+        }
+
+        private async Task AddFavorites(BookVM bookVM)
+        {
+            var book = await Model.GetBookById(bookVM.Id);
+            await Model.AddToFavorites(book.Id);
+            await GetFavoriteBooks();
+        }
+
+        private async Task RemoveFavorites(BookVM bookVM)
+        {
+            var book = await Model.GetBookById(bookVM.Id);
+            await Model.RemoveFromFavorites(book.Id);
+            await GetFavoriteBooks();
+        }
+
+
+        private async Task CheckIsFavorite(BookVM bookVM)
+        {
+            await GetFavoriteBooks();
+
+            if (FavoriteBooks.Any(favoriteBook => favoriteBook.Id == bookVM.Id))
+            {
+                IsFavorite = true;
+            }
+            else
+            {
+                IsFavorite = false;
+            }
+        }
 
         private async Task GetBooksByAuthor(AuthorVM author)
         {

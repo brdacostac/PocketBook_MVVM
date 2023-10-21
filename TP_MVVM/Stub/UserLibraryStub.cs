@@ -419,7 +419,7 @@ namespace StubLib
 
         public Task<Tuple<long, IEnumerable<Book>>> GetFavoritesBooks(int index, int count)
         {
-            return Task.FromResult(Tuple.Create(Favorites.LongCount(), Favorites.Skip(index * count).Take(count)));
+            return Task.FromResult(Tuple.Create(Favorites.LongCount(), Favorites.Skip(index*count).Take(count)));
         }
     }
 }
