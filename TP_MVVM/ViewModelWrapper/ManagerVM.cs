@@ -105,8 +105,7 @@ namespace ViewModelWrapper
 
         public ICommand SearchCommand { get; set; }
 
-        
-
+        public ICommand GetBooksByAuthorCommand { get; set; }
 
 
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
@@ -119,9 +118,26 @@ namespace ViewModelWrapper
             GetBookCommand = new RelayCommand<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
             GetAuthorsCommand = new RelayCommand<string>(async (searchText) => await GetAllAuthors(searchText));
             SearchCommand = new RelayCommand(SearchAuthors);
+            GetBooksByAuthorCommand = new RelayCommand<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
 
         }
 
+
+
+        private async Task GetBooksByAuthor(AuthorVM author)
+        {
+            var result = await Model.GetBooksByAuthor(author.Name,0,10);
+            NbBooks = (int)result.count;
+            NbPages = ((NbBooks - 1) / Count) + 1;
+            books.Clear();
+            var booksVM = result.books.Select(book => new BookVM(book));
+            foreach (var book in booksVM)
+            {
+                books.Add(book);
+            }
+
+            GroupedBooks = Books.GroupBy(b => b.Author).OrderBy(group => group.Key);
+        }
 
         private async Task GetBooksFromCollection()
         {

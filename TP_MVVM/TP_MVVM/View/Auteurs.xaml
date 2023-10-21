@@ -18,11 +18,18 @@
                     
                 </VerticalStackLayout>
 
-                <ListView x:Name="listView" ItemsSource="{Binding AuteursPageVM.ManagerVM.Authors}" Grid.Row="2" BackgroundColor="#f6f6f6">
-                    <ListView.ItemTemplate>
+                <CollectionView x:Name="bookCollectionAuthors"
+                          ItemsSource="{Binding AuteursPageVM.ManagerVM.Authors}"
+                          Grid.Row="2"
+                          BackgroundColor="#f6f6f6"
+                          SelectionMode="Single"
+                          SelectionChangedCommand="{Binding AuteursPageVM.GetBooksByAuthorAndNavigateCommand}"
+                          SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference bookCollectionAuthors}}">
+                    
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" >
+
+                            <StackLayout Orientation="Horizontal"  Margin="0,5">
 
                                     <Image Source="book.png" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" WidthRequest="25">
                                         <Image.Behaviors>
@@ -30,7 +37,7 @@
                                         </Image.Behaviors>
                                     </Image>
 
-                                    <Label Text="{Binding Name}" Style="{StaticResource CustomLabelStyle}" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="{Binding Name}" Style="{StaticResource CustomLabelStyle}" VerticalOptions="CenterAndExpand" Margin="15,0,0,0" FontSize="20" />
 
                                     <Label Text="{Binding NbBooksByAuthor}" Style="{StaticResource CustomLabelStyle}" TextColor="LightGrey"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />
 
@@ -41,11 +48,11 @@
                                     </Image>
 
                                 </StackLayout>
-                            </ViewCell>
+                           
                         </DataTemplate>
-                    </ListView.ItemTemplate>
+                    </CollectionView.ItemTemplate>
 
-                </ListView>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
     </Grid>
