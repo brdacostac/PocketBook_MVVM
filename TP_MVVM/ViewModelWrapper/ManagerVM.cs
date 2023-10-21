@@ -119,7 +119,13 @@ namespace ViewModelWrapper
 
         public ICommand GetBooksByAuthorCommand { get; set; }
 
+        public ICommand GetFavoriteBooksCommand { get; private set; }
+
         public ICommand CheckIsFavoriteCommand { get; private set; }
+
+        public ICommand AddFavoritesCommand { get; private set; }
+
+        public ICommand RemoveFavoritesCommand { get; private set; }
 
 
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
@@ -133,7 +139,10 @@ namespace ViewModelWrapper
             GetAuthorsCommand = new RelayCommand<string>(async (searchText) => await GetAllAuthors(searchText));
             SearchCommand = new RelayCommand(SearchAuthors);
             GetBooksByAuthorCommand = new RelayCommand<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
+            GetFavoriteBooksCommand = new RelayCommand(() => GetFavoriteBooks());
             CheckIsFavoriteCommand = new RelayCommand<BookVM>(bookVM => CheckIsFavorite(bookVM));
+            AddFavoritesCommand = new RelayCommand<BookVM>(bookVM => AddFavorites(bookVM));
+            RemoveFavoritesCommand = new RelayCommand<BookVM>(bookVM => RemoveFavorites(bookVM));
 
         }
 

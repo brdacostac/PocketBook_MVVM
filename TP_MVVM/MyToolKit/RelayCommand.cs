@@ -16,7 +16,7 @@ namespace MyToolKit
         public RelayCommand(Action<T> execute, Func<T, bool> canExecute = null)
         {
             this.execute = execute;
-            this.canExecute = canExecute;
+            this.canExecute = canExecute ?? (t => true);
         }
 
 

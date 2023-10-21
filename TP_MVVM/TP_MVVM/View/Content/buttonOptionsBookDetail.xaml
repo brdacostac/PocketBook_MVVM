@@ -4,10 +4,10 @@
              x:Class="TP_MVVM.View.Content.buttonOptionsBookDetail"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Name="this">
-    
-        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10" >
+
+    <Grid BindingContext="{x:Reference this}" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10" >
             <Grid.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding CommandName}" CommandParameter="{Binding CommandNameParameter}"></TapGestureRecognizer>
+                <TapGestureRecognizer Command="{Binding CommandName}" CommandParameter="{Binding CommandNameParameter}"></TapGestureRecognizer>
             </Grid.GestureRecognizers>
 
         <Image Source="{Binding IconPath, Source={x:Reference this}}" Grid.Row="0" Margin="15,0,0,5">

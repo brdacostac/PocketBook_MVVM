@@ -13,46 +13,64 @@ namespace TP_MVVM.ViewModel
 {
     public class BookDetailPageVM : BaseViewModel
     {
-        public BookVM Book { get; private set; }
         public ManagerVM ManagerVM { get; private set; }
+
+        public NavigationVM NavigationVM { get; private set; }
+
+        private string favoriteOptionText;
 
         public ICommand AddRemoveFavoritesCommand { get; private set; }
 
-        public BookDetailPageVM(BookVM bookVM , ManagerVM managerVM)
+        public string FavoriteButtonText
         {
-            Book = bookVM;
-            ManagerVM = managerVM;
+            get
+            {
+                ManagerVM.GetFavoriteBooksCommand.Execute(null);
+                if (ManagerVM.FavoriteBooks.Any(favoriteBook => favoriteBook.Id == ManagerVM.CurrentBook.Id))
+                    return favoriteOptionText = "Supprimer des favoris";
 
-            AddRemoveFavoritesCommand = new RelayCommand<BookVM>((bookVM) => AddRemoveFavorites(bookVM));
+                return favoriteOptionText = "Ajouter aux favoris";
+            }
+            set
+            {
+                if (favoriteOptionText != value)
+                {
+                    favoriteOptionText = value;
+                    OnPropertyChanged(nameof(FavoriteButtonText));
+                }
+                    
+            }
         }
 
-        private async Task AddRemoveFavorites(BookVM bookVM)
+
+        private void AddRemoveFavoritesAndNavigate(BookVM bookVM)
         {
-            ManagerVM.CheckBookIsFavoriteCommand.Execute(bookVM);
+            ManagerVM.CheckIsFavoriteCommand.Execute(bookVM);
             if (ManagerVM.IsFavorite == false)
             {
-                ManagerVM.AddToFavoritesCommand.Execute(bookVM);
-                AddFavorisButtonText = "Supprimer des favoris";
-                OnPropertyChanged(nameof(AddFavorisButtonText));
+                ManagerVM.AddFavoritesCommand.Execute(bookVM);
+                FavoriteButtonText = "Supprimer des favoris";
 
-                var toast = Toast.Make("Livre ajouté aux favoris !", CommunityToolkit.Maui.Core.ToastDuration.Short);
-                await toast.Show();
 
                 ManagerVM.GetFavoriteBooksCommand.Execute(null);
-                Navigator.NavigationCommand.Execute("/favoris");
+                NavigationVM.NavigateToFavoritesCommand.Execute(null);
             }
             else
             {
-                ManagerVM.RemoveFromFavoritesCommand.Execute(bookVM);
-                AddFavorisButtonText = "Ajouter aux favoris";
-                OnPropertyChanged(nameof(AddFavorisButtonText));
-
-                var toast = Toast.Make("Livre supprimé des favoris !", CommunityToolkit.Maui.Core.ToastDuration.Short);
-                await toast.Show();
+                ManagerVM.RemoveFavoritesCommand.Execute(bookVM);
+                FavoriteButtonText = "Ajouter aux favoris";
 
                 ManagerVM.GetFavoriteBooksCommand.Execute(null);
-                Navigator.NavigationCommand.Execute("/favoris");
+                NavigationVM.NavigateToFavoritesCommand.Execute(null);
             }
+        }
+        public BookDetailPageVM(ManagerVM managerVM, NavigationVM navigationVM)
+        {
+
+            ManagerVM = managerVM;
+            NavigationVM = navigationVM;
+
+            AddRemoveFavoritesCommand = new RelayCommand<BookVM>((bookVM) => AddRemoveFavoritesAndNavigate(bookVM));
         }
     }
 }

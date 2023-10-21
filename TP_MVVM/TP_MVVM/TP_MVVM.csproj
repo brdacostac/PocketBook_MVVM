@@ -87,13 +87,16 @@
 	  <MauiXaml Update="View\Emprunts.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Favorites.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\MyList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Model\Model.csproj" />
+	  <ProjectReference Include="..\StubbedDTO\StubbedDTO.csproj" />
 	  <ProjectReference Include="..\Stub\Stub.csproj" />
 	  <ProjectReference Include="..\ViewModelWrapper\ViewModelWrapper.csproj" />
 	</ItemGroup>

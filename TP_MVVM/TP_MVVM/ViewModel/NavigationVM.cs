@@ -13,6 +13,7 @@ namespace TP_MVVM.ViewModel
         public ICommand NavigateToBooksCommand { get; set; }
         public ICommand NavigateToAuthorsCommand { get; set; }
         public ICommand NavigateToBookDetailCommand { get; set; }
+        public ICommand NavigateToFavoritesCommand { get; set; }
         public ICommand NavigateToEmprunt { get; set; }
         public IServiceProvider Provider { get; set; }
 
@@ -25,6 +26,7 @@ namespace TP_MVVM.ViewModel
             NavigateToBooksCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<MyList>()));
             NavigateToBookDetailCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<BookDetail>()));
             NavigateToAuthorsCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<Auteurs>()));
+            NavigateToFavoritesCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<Favorites>()));
             NavigateToEmprunt = new Command(async () => await Navigation.PushAsync(new Emprunts()));
         }
 
