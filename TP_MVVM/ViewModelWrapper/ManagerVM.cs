@@ -16,6 +16,7 @@ namespace ViewModelWrapper
         private readonly ObservableCollection<BookVM> books = new();
         private readonly ObservableCollection<AuthorVM> authors = new();
         private BookVM book;
+        private string searchText;
 
         public int Index
         {
@@ -34,6 +35,19 @@ namespace ViewModelWrapper
         }
 
         
+
+        public string SearchText
+        {
+            get => searchText;
+            set
+            {
+                SetProperty(ref searchText, value);
+
+                // Appel de la methode de recherche lorsque le texte va changer
+                SearchAuthors();
+            }
+        }
+
         public int NbPages
         {
             get => nbPages;
@@ -89,6 +103,10 @@ namespace ViewModelWrapper
 
         public ICommand PreviousPageCommand { get; set; }
 
+        public ICommand SearchCommand { get; set; }
+
+        
+
 
 
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
@@ -99,7 +117,8 @@ namespace ViewModelWrapper
             NextPageCommand = new RelayCommand(async () => NextPage());
             PreviousPageCommand = new RelayCommand(async () => PreviousPage());
             GetBookCommand = new RelayCommand<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
-            GetAuthorsCommand = new RelayCommand(async () => GetAllAuthors());
+            GetAuthorsCommand = new RelayCommand<string>(async (searchText) => await GetAllAuthors(searchText));
+            SearchCommand = new RelayCommand(SearchAuthors);
 
         }
 
@@ -128,7 +147,7 @@ namespace ViewModelWrapper
 
         }
 
-        private async Task GetAllAuthors()
+        private async Task GetAllAuthors(string searchText)
         {
             var result = await Model.GetBooksFromCollection(0, 999);
             IEnumerable<Book> allbooks = result.books;
@@ -140,11 +159,19 @@ namespace ViewModelWrapper
             {
                 foreach (var author in book.Authors)
                 {
-                    authors.Add(author);
-                    author.NbBooksByAuthor++;
+                    if (string.IsNullOrEmpty(searchText) || author.Name.Contains(searchText))
+                    {
+                        authors.Add(author);
+                        author.NbBooksByAuthor++;
+                    }
                 }
             }
 
+        }
+
+        private void SearchAuthors()
+        {
+            GetAllAuthors(SearchText);
         }
 
         public async Task NextPage()

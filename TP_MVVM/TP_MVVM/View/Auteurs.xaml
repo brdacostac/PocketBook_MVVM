@@ -13,8 +13,7 @@
                 <VerticalStackLayout>
                    
                     <Grid ColumnDefinitions="*,Auto">
-                        <SearchBar Grid.Column="0" Placeholder="Rechercher" HeightRequest="70"  />
-                        <Button Grid.Column="1" Text="Annuler" TextColor="Gray" FontAttributes="Bold" BackgroundColor="White"/>
+                        <SearchBar Grid.Column="0" Placeholder="Rechercher" HeightRequest="70" Text="{Binding AuteursPageVM.ManagerVM.SearchText}" SearchCommand="{Binding AuteursPageVM.ManagerVM.SearchCommand}" />
                     </Grid>
                     
                 </VerticalStackLayout>
