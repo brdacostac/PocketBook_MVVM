@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TP_MVVM.View;
+using TP_MVVM.View.Custom;
 
 namespace TP_MVVM.ViewModel
 {
@@ -14,8 +15,10 @@ namespace TP_MVVM.ViewModel
         public ICommand NavigateToAuthorsCommand { get; set; }
         public ICommand NavigateToBookDetailCommand { get; set; }
         public ICommand NavigateToFavoritesCommand { get; set; }
+        public ICommand NavigateToDatesCommand { get; set; }
         public ICommand NavigateToBackCommand { get; set; }
-        public ICommand NavigateToEmprunt { get; set; }
+        public ICommand NavigateToAddBookCommand { get; set; }
+        public ICommand NavigateToEmpruntsCommand { get; set; }
 
 
         public IServiceProvider Provider { get; set; }
@@ -30,7 +33,9 @@ namespace TP_MVVM.ViewModel
             NavigateToBookDetailCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<BookDetail>()));
             NavigateToAuthorsCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<Auteurs>()));
             NavigateToFavoritesCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<Favorites>()));
-            NavigateToEmprunt = new Command(async () => await Navigation.PushAsync(new Emprunts()));
+            NavigateToDatesCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<DatePublication>()));
+            NavigateToEmpruntsCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<Emprunts>()));
+            NavigateToAddBookCommand = new Command(async () => await Navigation.PushAsync(Provider.GetService<CustomMenuPopUp>()));
 
             NavigateToBackCommand = new Command(async () => await Navigation.PopAsync());
         }

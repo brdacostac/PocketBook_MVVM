@@ -7,7 +7,7 @@
              x:Class="TP_MVVM.View.MainPage">
     
     <Grid RowDefinitions="Auto, *">
-        <local:CustomHeader HeightRequest="50" VerticalOptions="Start" PopupRequested="CallPopUp" Padding="10, 0"/>
+        <local:CustomHeader HeightRequest="50" VerticalOptions="Start" CommandName="{Binding MainPageVM.NavigateToAddBookCommand}" Padding="10, 0"/>
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 Spacing="25"
@@ -24,11 +24,11 @@
 
 
                 <content:buttonMenu CommandName="{Binding MainPageVM.GetBooksAndNavigateCommand}" IconPath="tray_fill.png" Title="Tous" CountBook="{Binding MainPageVM.ManagerVM.NbBooks}"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToEmprunt}" IconPath="person_badge_clock_fill.png" Title="En prêt" CountBook="1"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="arrow_forward.png" Title="À lire plus tard"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="eyeglasses.png" Title="Statut de lecture"/>
+                <content:buttonMenu CommandName="{Binding MainPageVM.NavigateToEmpruntsCommand}" IconPath="person_badge_clock_fill.png" Title="En prêt" CountBook="1"/>
+                <content:buttonMenu  IconPath="arrow_forward.png" Title="À lire plus tard"/>
+                <content:buttonMenu  IconPath="eyeglasses.png" Title="Statut de lecture"/>
                 <content:buttonMenu CommandName="{Binding MainPageVM.GetFavoritesAndNavigateCommand}" IconPath="heart_fill.png" Title="Favoris"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="tag_fill.png" Title="Étiquettes"/>
+                <content:buttonMenu  IconPath="tag_fill.png" Title="Étiquettes"/>
 
 
                 <Label
@@ -41,8 +41,8 @@
                     Style="{StaticResource CustomLabelStyle}"/>
 
                 <content:buttonMenu CommandName="{Binding MainPageVM.GetAuthorsAndNavigateCommand}" IconPath="person_fill.png" Title="Auteur"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="calendar.png" Title="Date de publication"/>
-                <content:buttonMenu CommandName="{Binding Navigater.NavigateToAuteurs}" IconPath="sparkles.png" Title="Note"/>
+                <content:buttonMenu CommandName="{Binding MainPageVM.NavigateToDatesCommand}" IconPath="calendar.png" Title="Date de publication"/>
+                <content:buttonMenu IconPath="sparkles.png" Title="Note"/>
 
 
 

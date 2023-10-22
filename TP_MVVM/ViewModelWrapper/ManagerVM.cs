@@ -129,6 +129,8 @@ namespace ViewModelWrapper
 
         public ICommand RemoveBookCommand { get; private set; }
 
+        public ICommand AddBookCommand { get; private set; }
+
 
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
             : base(new Manager(libraryManager, userLibraryManager))
@@ -146,7 +148,17 @@ namespace ViewModelWrapper
             AddFavoritesCommand = new RelayCommand<BookVM>(async bookVM => await AddFavorites(bookVM));
             RemoveFavoritesCommand = new RelayCommand<BookVM>(async bookVM => await RemoveFavorites(bookVM));
             RemoveBookCommand = new RelayCommand<BookVM>(async (bookVM) => await RemoveBook(bookVM));
+            AddBookCommand = new RelayCommand<string>(async (isbn) => await AddBook(isbn));
 
+        }
+
+        private async Task AddBook(string isbn)
+        {
+            var book = await Model.GetBookByISBN(isbn);
+            if (book != null)
+            {
+                await Model.AddBookToCollection(book.Id);
+            }
         }
 
         private async Task RemoveBook(BookVM bookVM)

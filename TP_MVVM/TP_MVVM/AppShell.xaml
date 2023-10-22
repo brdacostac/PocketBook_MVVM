@@ -21,15 +21,15 @@
         </Tab>
 
         <Tab Title="My Lists" Icon="list_books.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MyList}" Route="MyList"/>
+            <ShellContent ContentTemplate="{DataTemplate local:MyList}" />
         </Tab>
 
         <Tab Title="My Readings" Icon="bookmark_fill.png">
-            <ShellContent ContentTemplate="{DataTemplate local:Auteurs}" Route="Auteurs"/>
+            <ShellContent ContentTemplate="{DataTemplate local:Auteurs}"/>
         </Tab>
 
         <Tab Title="Search" Icon="magnifyingglass.png">
-            <ShellContent ContentTemplate="{DataTemplate local:DatePublication}" Route="DatePublication"/>
+            <ShellContent ContentTemplate="{DataTemplate local:DatePublication}"/>
         </Tab>
     </TabBar>
 

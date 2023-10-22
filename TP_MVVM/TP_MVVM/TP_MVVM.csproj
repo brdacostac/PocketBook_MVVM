@@ -100,4 +100,6 @@
 	  <ProjectReference Include="..\Stub\Stub.csproj" />
 	  <ProjectReference Include="..\ViewModelWrapper\ViewModelWrapper.csproj" />
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadUnhandledDeviceExceptionTP_MVVMHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 </Project>

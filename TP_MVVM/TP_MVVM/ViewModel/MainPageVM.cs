@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Maui.Views;
+using TP_MVVM.View.Custom;
 using System.Windows.Input;
 using ViewModelWrapper;
 
@@ -21,8 +23,26 @@ namespace TP_MVVM.ViewModel
 
         public ICommand GetFavoritesAndNavigateCommand { get; set; }
 
-       
+        public ICommand NavigateToAddBookCommand { get; set; }
 
+        public ICommand NavigateToDatesCommand { get; set; }
+
+        public ICommand NavigateToEmpruntsCommand { get; set; }
+
+
+        private void NavigateToEmprunts()
+        {
+            NavigationVM.NavigateToEmpruntsCommand.Execute(null);
+        }
+        private void NavigateToDates()
+        {
+            NavigationVM.NavigateToDatesCommand.Execute(null);
+        }
+
+        private void NavigateToAddBook()
+        {
+            NavigationVM.NavigateToAddBookCommand.Execute(null);
+        }
 
         private void GetBooksAndNavigate()
         {
@@ -43,6 +63,7 @@ namespace TP_MVVM.ViewModel
         }
 
 
+
         public MainPageVM(ManagerVM managerVM, NavigationVM navigationVM)
         {
             ManagerVM = managerVM;
@@ -51,6 +72,9 @@ namespace TP_MVVM.ViewModel
             GetBooksAndNavigateCommand = new RelayCommand(GetBooksAndNavigate);
             GetAuthorsAndNavigateCommand = new RelayCommand(GetAuthorsAndNavigate);
             GetFavoritesAndNavigateCommand = new RelayCommand(GetFavoritesAndNavigate);
+            NavigateToAddBookCommand = new RelayCommand(NavigateToAddBook);
+            NavigateToDatesCommand = new RelayCommand(NavigateToDates);
+            NavigateToEmpruntsCommand = new RelayCommand(NavigateToEmprunts);
         }
     }
 }

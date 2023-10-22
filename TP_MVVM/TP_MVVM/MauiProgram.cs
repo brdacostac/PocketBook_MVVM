@@ -5,6 +5,7 @@ using TP_MVVM.ViewModel;
 using ViewModelWrapper;
 using Model;
 using StubLib;
+using TP_MVVM.View.Custom;
 
 namespace TP_MVVM
 {
@@ -28,6 +29,8 @@ namespace TP_MVVM
                 .AddSingleton<NavigationVM>()
                 .AddSingleton<MainPage>()
                 .AddSingleton<MainPageVM>()
+                .AddSingleton<DatePublication>()
+                .AddSingleton<Emprunts>()
                 .AddSingleton<MyList>()
                 .AddSingleton<Auteurs>()
                 .AddSingleton<AuteursPageVM>()
@@ -40,6 +43,9 @@ namespace TP_MVVM
                 .AddSingleton<ManagerVM>()
                 .AddSingleton<Favorites>()
                 .AddSingleton<FavoritesPageVM>()
+                .AddSingleton<CustomMenuPopUp>()
+                .AddSingleton<CustomHeaderPopUpVM>()
+                .AddSingleton<CustomHeader>()
                 .AddSingleton<Book>()
                 .AddSingleton<BookVM>();
 

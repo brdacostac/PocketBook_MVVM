@@ -2,22 +2,26 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="TP_MVVM.View.Custom.CustomHeader">
+             x:Class="TP_MVVM.View.Custom.CustomHeader"
+             x:Name="CustomHeaderKey">
     
     <Grid ColumnDefinitions="110, *, 40">
 
         <Label Text="Modifier" Style="{StaticResource CustomLabelStyle}" FontAttributes="Bold" TextColor="#f81818" Grid.Column="0" Padding="10" FontSize="18"/>
 
-
-        <ImageButton Source="plus.png" Grid.Column="2"
-                MaximumHeightRequest="20"
-                MaximumWidthRequest="20"
-                VerticalOptions="Center"
-                Clicked="PopUp">
-            <ImageButton.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="#f81818" />
-            </ImageButton.Behaviors>
-        </ImageButton>
+        <Grid Grid.Column="2">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CommandName, Source={x:Reference CustomHeaderKey}}"></TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+            <ImageButton Source="plus.png" 
+                    MaximumHeightRequest="20"
+                    MaximumWidthRequest="20"
+                    VerticalOptions="Center">
+                <ImageButton.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="#f81818" />
+                </ImageButton.Behaviors>
+            </ImageButton>
+        </Grid>
     </Grid>
     
 </ContentView>

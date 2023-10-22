@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TP_MVVM.View.Custom.CustomMenuPopUp"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-               HorizontalOptions="End"
-               VerticalOptions="Start"
-               Color="Transparent">
+             >
     
     <StackLayout Padding="0,50,0,0">
 
@@ -69,17 +67,22 @@
                     <Image Grid.Column="1" Source="magnifyingglass.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
                 </Grid>
 
-                <Grid Grid.Row="5" ColumnDefinitions="auto,auto" ColumnSpacing="5">
+                <Grid Grid.Row="5" ColumnDefinitions="auto,auto" RowDefinitions="auto,auto" ColumnSpacing="5">
 
                     <Label
                      Grid.Column="0"
+                     Grid.Row="0"
                      Margin="10,0,0,0"
                      Padding="5"
                      FontSize="Medium"
                      Style="{StaticResource CustomLabelStyle}"
                      Text="Saisir l'ISBN" />
 
-                    <Image Grid.Column="1" Source="keyboard.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
+                    <Image Grid.Column="1" Grid.Row="0" Source="keyboard.png" MaximumHeightRequest="20" MaximumWidthRequest="20"></Image>
+
+                    <Entry Margin="10,0,0,0" Placeholder="ISBN" x:Name="textEntry" Grid.Column="0" Grid.Row="1" 
+                           ReturnCommand="{Binding CustomHeaderPopUpVM.AddBookCommand}"
+                           ReturnCommandParameter="{Binding Text, Source={x:Reference textEntry}}"/>
                 </Grid>
 
 
@@ -89,4 +92,4 @@
 
 
     </StackLayout>
-</toolkit:Popup>
+</ContentPage>
