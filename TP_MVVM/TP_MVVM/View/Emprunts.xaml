@@ -6,8 +6,11 @@
              xmlns:local="clr-namespace:TP_MVVM.View.Custom"
              Title="Emprunts">
     <Grid RowDefinitions="Auto, Auto, Auto">
-        
-        <local:CustomHeaderReturn  TitleLastPage="Mes Livres" TitleCurrentPage="Tous" IsArrowBtnVisible="True" IsPlusBtnVisible="True" Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+
+        <local:CustomHeaderReturn  CommandName="{Binding NavigationVM.NavigateToBackCommand}"  
+                                   TitleLastPage="Mes Livres" TitleCurrentPage="Tous" 
+                                   IsArrowBtnVisible="True" IsPlusBtnVisible="True" Grid.Row="0"
+                                   HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
 
         <Grid
             Padding="10"

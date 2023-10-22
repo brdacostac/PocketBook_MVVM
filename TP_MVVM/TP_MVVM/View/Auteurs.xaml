@@ -6,7 +6,9 @@
              x:Class="TP_MVVM.View.Auteurs"
              Title="Auteurs">
     <Grid RowDefinitions="Auto,*">
-        <local:CustomHeaderReturn  TitleLastPage="Mes Livres" TitleCurrentPage="Auteurs" IsArrowBtnVisible="True" IsPlusBtnVisible="False" Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
+        <local:CustomHeaderReturn  CommandName="{Binding AuteursPageVM.NavigateToBackCommand}" 
+                                   TitleLastPage="Mes Livres" TitleCurrentPage="Auteurs"
+                                   IsArrowBtnVisible="True" IsPlusBtnVisible="False" Grid.Row="0" HeightRequest="50" VerticalOptions="Start" Padding="10, 0"/>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical">
 

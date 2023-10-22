@@ -1,3 +1,6 @@
+using System.Windows.Input;
+using TP_MVVM.ViewModel;
+
 namespace TP_MVVM.View.Custom;
 
 public partial class CustomHeaderReturn : ContentView
@@ -11,6 +14,9 @@ public partial class CustomHeaderReturn : ContentView
     public static readonly BindableProperty IsPlusBtnVisibleProperty = BindableProperty.Create( nameof(IsPlusBtnVisible), typeof(bool), typeof(CustomHeaderReturn), false );
 
     public static readonly BindableProperty IsArrowBtnVisibleProperty = BindableProperty.Create(nameof(IsArrowBtnVisible), typeof(bool), typeof(CustomHeaderReturn), false);
+
+    public static readonly BindableProperty CommandNameProperty = BindableProperty.Create(nameof(CommandName), typeof(ICommand), typeof(CustomHeaderReturn));
+
 
     public string TitleLastPage
     {
@@ -35,6 +41,13 @@ public partial class CustomHeaderReturn : ContentView
         get => (bool)GetValue(IsArrowBtnVisibleProperty);
         set => SetValue(IsArrowBtnVisibleProperty, value);
     }
+
+    public ICommand CommandName
+    {
+        get => (ICommand)GetValue(CommandNameProperty);
+        set => SetValue(CommandNameProperty, value);
+    }
+
 
     public CustomHeaderReturn()
     {

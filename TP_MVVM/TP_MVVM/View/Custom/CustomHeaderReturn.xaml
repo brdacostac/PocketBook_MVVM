@@ -5,28 +5,32 @@
              x:Class="TP_MVVM.View.Custom.CustomHeaderReturn"
              x:Name="CustomHeaderReturnKey">
 
-    <Grid ColumnDefinitions="20, auto, *, auto, auto" ColumnSpacing="10">
+    <Grid ColumnDefinitions="100, auto, *, auto, auto" ColumnSpacing="10">
+        <Grid Grid.Column="0" ColumnDefinitions="Auto, auto">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CommandName, Source={x:Reference CustomHeaderReturnKey}}"></TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+            <ImageButton Source="chevron_left.png" 
+                    MaximumHeightRequest="25"
+                    MaximumWidthRequest="25"
+                    VerticalOptions="Center"
+                    Grid.Column="0">
+                <ImageButton.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="#f81818" />
+                </ImageButton.Behaviors>
+            </ImageButton>
 
-        <ImageButton Source="chevron_left.png" Grid.Column="0"
-                MaximumHeightRequest="25"
-                MaximumWidthRequest="25"
-                VerticalOptions="Center">
-            <ImageButton.Behaviors>
-                <toolkit:IconTintColorBehavior TintColor="#f81818" />
-            </ImageButton.Behaviors>
-        </ImageButton>
-
-        <Label
-            VerticalOptions="Center"
-            HorizontalOptions="Start"
-            Grid.Column="1"
-            FontSize="17"
-            FontAttributes="Bold"
-            Style="{StaticResource CustomLabelStyle}"
-            Text="{Binding TitleLastPage, Source={x:Reference CustomHeaderReturnKey}}">
-            <Label.TextColor>#f81818</Label.TextColor>
-        </Label>
-
+            <Label
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Grid.Column="1"
+                FontSize="17"
+                FontAttributes="Bold"
+                Style="{StaticResource CustomLabelStyle}"
+                Text="{Binding TitleLastPage, Source={x:Reference CustomHeaderReturnKey}}">
+                <Label.TextColor>#f81818</Label.TextColor>
+            </Label>
+        </Grid>
         <Label
             Grid.Column="2"
             VerticalOptions="Center"

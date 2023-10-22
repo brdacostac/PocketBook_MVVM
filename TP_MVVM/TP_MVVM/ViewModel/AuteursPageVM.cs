@@ -16,6 +16,12 @@ namespace TP_MVVM.ViewModel
         public NavigationVM NavigationVM { get; private set; }
 
         public ICommand GetBooksByAuthorAndNavigateCommand { get; set; }
+        public ICommand NavigateToBackCommand { get; set; }
+
+        private void NavigateToBack()
+        {
+            NavigationVM.NavigateToBackCommand.Execute(null);
+        }
 
         private void GetBooksByAuthorAndNavigate(AuthorVM author)
         {
@@ -24,12 +30,14 @@ namespace TP_MVVM.ViewModel
         }
 
 
+
         public AuteursPageVM(ManagerVM managerVM, NavigationVM navigationVM)
         {
             ManagerVM = managerVM;
             NavigationVM = navigationVM;
 
-            GetBooksByAuthorAndNavigateCommand = new Command<AuthorVM>(GetBooksByAuthorAndNavigate);
+            GetBooksByAuthorAndNavigateCommand = new RelayCommand<AuthorVM>(GetBooksByAuthorAndNavigate);
+            NavigateToBackCommand = new RelayCommand(NavigateToBack);
 
         }
 

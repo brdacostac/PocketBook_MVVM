@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyToolKit;
 using System.Windows.Input;
 using ViewModelWrapper;
 
@@ -16,6 +17,13 @@ namespace TP_MVVM.ViewModel
 
         public ICommand LoadBookAndNavigateCommand { get; set; }
 
+        public ICommand NavigateToBackCommand { get; set; }
+
+        private void NavigateToBack()
+        {
+            NavigationVM.NavigateToBackCommand.Execute(null);
+        }
+
 
         private void LoadBookAndNavigate(BookVM bookVM)
         {
@@ -28,7 +36,8 @@ namespace TP_MVVM.ViewModel
             ManagerVM = managerVM;
             NavigationVM = navigationVM;
 
-            LoadBookAndNavigateCommand = new Command<BookVM>(LoadBookAndNavigate);
+            LoadBookAndNavigateCommand = new RelayCommand<BookVM>(LoadBookAndNavigate);
+            NavigateToBackCommand = new RelayCommand(NavigateToBack);
         }
     }
 }
