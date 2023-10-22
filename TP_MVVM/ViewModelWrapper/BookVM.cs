@@ -68,6 +68,7 @@ namespace ViewModelWrapper
 
         }
 
+
         public List<string> Publishers
         {
             get => Model.Publishers;
@@ -103,12 +104,6 @@ namespace ViewModelWrapper
         public float? UserRating
         {
             get => Model?.UserRating;
-            set
-            {
-                if (Model == null)
-                    return;
-                SetProperty(Model.UserRating, value, rating => Model.UserRating = rating);
-            }
         }
 
 

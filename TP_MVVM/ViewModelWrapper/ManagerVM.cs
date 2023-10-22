@@ -134,18 +134,18 @@ namespace ViewModelWrapper
             : base(new Manager(libraryManager, userLibraryManager))
         {
             Books = new(books);
-            GetBooksCommand = new RelayCommand(async () => GetBooksFromCollection());
-            NextPageCommand = new RelayCommand(async () => NextPage());
-            PreviousPageCommand = new RelayCommand(async () => PreviousPage());
+            GetBooksCommand = new RelayCommand(async () => await GetBooksFromCollection());
+            NextPageCommand = new RelayCommand(async () => await NextPage());
+            PreviousPageCommand = new RelayCommand(async () => await PreviousPage());
             GetBookCommand = new RelayCommand<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
             GetAuthorsCommand = new RelayCommand<string>(async (searchText) => await GetAllAuthors(searchText));
             SearchCommand = new RelayCommand(SearchAuthors);
             GetBooksByAuthorCommand = new RelayCommand<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
-            GetFavoriteBooksCommand = new RelayCommand(() => GetFavoriteBooks());
-            CheckIsFavoriteCommand = new RelayCommand<BookVM>(bookVM => CheckIsFavorite(bookVM));
-            AddFavoritesCommand = new RelayCommand<BookVM>(bookVM => AddFavorites(bookVM));
-            RemoveFavoritesCommand = new RelayCommand<BookVM>(bookVM => RemoveFavorites(bookVM));
-            RemoveBookCommand = new RelayCommand<BookVM>((bookVM) => RemoveBook(bookVM));
+            GetFavoriteBooksCommand = new RelayCommand(async () => await GetFavoriteBooks());
+            CheckIsFavoriteCommand = new RelayCommand<BookVM>(async bookVM => await CheckIsFavorite(bookVM));
+            AddFavoritesCommand = new RelayCommand<BookVM>(async bookVM => await AddFavorites(bookVM));
+            RemoveFavoritesCommand = new RelayCommand<BookVM>(async bookVM => await RemoveFavorites(bookVM));
+            RemoveBookCommand = new RelayCommand<BookVM>(async (bookVM) => await RemoveBook(bookVM));
 
         }
 
@@ -270,9 +270,9 @@ namespace ViewModelWrapper
 
         }
 
-        private void SearchAuthors()
+        private async void SearchAuthors()
         {
-            GetAllAuthors(SearchText);
+            await GetAllAuthors(SearchText);
         }
 
         public async Task NextPage()
