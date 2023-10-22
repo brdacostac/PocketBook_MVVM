@@ -79,6 +79,8 @@ L'application doit maintenant permettre de naviguer sur toutes les pages et l'ut
   
 _Erreurs rencontrées et remarques_ :
 
+* Sur IOS le compter de livres dans la page Auteurs (filter auteur) ne marche pas, mais sur mon telephone Android ça marche.
+
 * J'ai supprimé le pop-up qui s'affichait lorsque l'utilisateur cliquait sur le bouton "+" de la page principale fait au TP1. Cela a été fait parce que je ne pouvais pas utiliser mes commandes avec un objet de type PopUp. Désormais, en cliquant sur le bouton "+", vous serez redirigé vers une nouvelle page où vous pourrez ajouter un livre en saisissant son ISBN.
 
 * Lorsque j'ajoute un livre aux favoris et que je vais sur une autre page de détails de livre, le bouton "Ajouter aux favoris" ne se met pas à jour automatiquement pour refléter le statut actuel. Cependant, il s'agit d'un problème d'affichage, car je peux toujours ajouter et retirer des livres de mes favoris sans problème.
