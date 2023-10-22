@@ -56,7 +56,7 @@ RelayCommand ..|> ICommand
 2. [x] affichage des livres de l'utilisateur : afficher tous les livres de l'utilisateur dans la vue _MyList_ et permettre la sélection d'un livre et la navigation vers la page _BookDetail_
   
 3. [x] filtrage par auteur et par date de publication : afficher dans la vue de filtrage (_FilterPage_)
-	Pour des raisons de gestion du temps, j'ai concentré mes efforts que sur la mise en place du filtrage par auteur.
+	**Note : Pour des raisons de gestion du temps, j'ai concentré mes efforts que sur la mise en place du filtrage par auteur.**
     
   
 **TP2 - MVVM Ajouts** :  
@@ -65,13 +65,13 @@ L'application doit maintenant permettre de naviguer sur toutes les pages et l'ut
 - [ ] changer le statut de lecture d'un livre,
 - [x] ajouter un livre aux favoris,
 - [x] filtrer les livres par **Auteur**, **Date de publication**, **Note**
-  **Pour cela j'ai fait seulement le filtrage par auteur pour optimiser le temps.**
+  **Note : En raison de contraintes de temps, j'ai mis en place uniquement le filtrage par auteur.**
 - [x] ajouter un livre à sa collection en saisissant l'ISBN (les vues seront à ajouter)
 - [x] supprimer un livre
 - [ ] prêter un livre (et ajouter un contact si besoin)
 - [ ] consulter la liste des livres prêtés. 
 - [x] Lors de la consultation des livres, il faudra gérer la pagination pour que l'on puisse limiter l'affichage à n (5, 10, 20,...) livres par page.
-  **La pagination est fait pour l'affichage des livres, mais je n'ai pas laissé le choix à l'utilisateur, l'affichage est limité à 10 livres par page.**
+  **Note :  Lors de la consultation des livres, la pagination est implémentée pour afficher 10 livres par page. Cependant, il n'y a pas d'option permettant à l'utilisateur de choisir le nombre de livres par page.**
 
 **TP3 : utilisation du MVVM Community Toolkit** :
 
@@ -79,15 +79,15 @@ L'application doit maintenant permettre de naviguer sur toutes les pages et l'ut
   
 _Erreurs rencontrées et remarques_ :
 
-* J'ai dû d'enlever le pop-up fait au TP1 lorsqu'ont clique dans le bouton + de la page principale, car je n'arrivais pas à utiliser mes commands sur un type PopUp. Donc le bouton plus ira vous ammener vers une page pour pouvoir ajouter le ISBN afin d'ajouter un livre.
+* J'ai supprimé le pop-up qui s'affichait lorsque l'utilisateur cliquait sur le bouton "+" de la page principale fait au TP1. Cela a été fait parce que je ne pouvais pas utiliser mes commandes avec un objet de type PopUp. Désormais, en cliquant sur le bouton "+", vous serez redirigé vers une nouvelle page où vous pourrez ajouter un livre en saisissant son ISBN.
 
-* Lors que j'ajoute un livre aux favoris et que j'aille sur un autre livreDetail, le bouton d'ajouter un livre ne se met pas à jour automatiquement, mais c'est juste l'affichage, j'arrive quand même à ajouter des livres en favoris.
+* Lorsque j'ajoute un livre aux favoris et que je vais sur une autre page de détails de livre, le bouton "Ajouter aux favoris" ne se met pas à jour automatiquement pour refléter le statut actuel. Cependant, il s'agit d'un problème d'affichage, car je peux toujours ajouter et retirer des livres de mes favoris sans problème.
 
-* Le compteur de livres lors qu'on lance l'application est egale à 0 car je fais le chargement juste quand on clique dans le bouton "Tous".
+* Au lancement de l'application, le compteur de livres est affiché à zéro car les livres ne sont chargés qu'au moment où l'utilisateur clique sur le bouton "Tous".
 
-* Lors du TP3 je n'ai pas utilisé [RelayCommand] pour ma NavigationVM
+* Lors du TP3 je n'ai pas utilisé [RelayCommand] pour ma NavigationVM.
 
-* Le TP4 n'a pas été fait
+* Le TP4 n'a pas été fait.
   
 
 *******
