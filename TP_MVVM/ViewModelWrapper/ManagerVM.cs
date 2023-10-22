@@ -1,12 +1,13 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Model;
-using MyToolKit;
+
 
 namespace ViewModelWrapper
 {
-    public class ManagerVM : BaseViewModel<Manager>
+    public partial class ManagerVM : ObservableObject
     {
 
         private int nbPages;
@@ -19,7 +20,7 @@ namespace ViewModelWrapper
         private BookVM book;
         private string searchText;
         private bool isFavorite;
-
+        public Manager Model { get; }
         public int Index
         {
             get => index;
@@ -133,22 +134,22 @@ namespace ViewModelWrapper
 
 
         public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
-            : base(new Manager(libraryManager, userLibraryManager))
         {
+            Model = new Manager(libraryManager, userLibraryManager);
             Books = new(books);
-            GetBooksCommand = new RelayCommand(async () => await GetBooksFromCollection());
-            NextPageCommand = new RelayCommand(async () => await NextPage());
-            PreviousPageCommand = new RelayCommand(async () => await PreviousPage());
-            GetBookCommand = new RelayCommand<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
-            GetAuthorsCommand = new RelayCommand<string>(async (searchText) => await GetAllAuthors(searchText));
-            SearchCommand = new RelayCommand(SearchAuthors);
-            GetBooksByAuthorCommand = new RelayCommand<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
-            GetFavoriteBooksCommand = new RelayCommand(async () => await GetFavoriteBooks());
-            CheckIsFavoriteCommand = new RelayCommand<BookVM>(async bookVM => await CheckIsFavorite(bookVM));
-            AddFavoritesCommand = new RelayCommand<BookVM>(async bookVM => await AddFavorites(bookVM));
-            RemoveFavoritesCommand = new RelayCommand<BookVM>(async bookVM => await RemoveFavorites(bookVM));
-            RemoveBookCommand = new RelayCommand<BookVM>(async (bookVM) => await RemoveBook(bookVM));
-            AddBookCommand = new RelayCommand<string>(async (isbn) => await AddBook(isbn));
+            GetBooksCommand = new Command(async () => await GetBooksFromCollection());
+            NextPageCommand = new Command(async () => await NextPage());
+            PreviousPageCommand = new Command(async () => await PreviousPage());
+            GetBookCommand = new Command<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
+            GetAuthorsCommand = new Command<string>(async (searchText) => await GetAllAuthors(searchText));
+            SearchCommand = new Command(SearchAuthors);
+            GetBooksByAuthorCommand = new Command<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
+            GetFavoriteBooksCommand = new Command(async () => await GetFavoriteBooks());
+            CheckIsFavoriteCommand = new Command<BookVM>(async bookVM => await CheckIsFavorite(bookVM));
+            AddFavoritesCommand = new Command<BookVM>(async bookVM => await AddFavorites(bookVM));
+            RemoveFavoritesCommand = new Command<BookVM>(async bookVM => await RemoveFavorites(bookVM));
+            RemoveBookCommand = new Command<BookVM>(async (bookVM) => await RemoveBook(bookVM));
+            AddBookCommand = new Command<string>(async (isbn) => await AddBook(isbn));
 
         }
 
