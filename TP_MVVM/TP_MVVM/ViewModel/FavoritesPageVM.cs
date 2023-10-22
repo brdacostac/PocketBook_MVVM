@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyToolKit;
 using System.Windows.Input;
 using ViewModelWrapper;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace TP_MVVM.ViewModel
 {
-    public class FavoritesPageVM
+    public partial class FavoritesPageVM : ObservableObject
     {
-        public ManagerVM ManagerVM { get; private set; }
 
-        public NavigationVM NavigationVM { get; private set; }
+        [ObservableProperty]
+        public ManagerVM managerVM;
 
-        public ICommand LoadBookAndNavigateCommand { get; set; }
+        [ObservableProperty]
+        public NavigationVM navigationVM;
 
-        public ICommand NavigateToBackCommand { get; set; }
 
+
+        [RelayCommand]
         private void NavigateToBack()
         {
             NavigationVM.NavigateToBackCommand.Execute(null);
         }
 
-
+        [RelayCommand]
         private void LoadBookAndNavigate(BookVM bookVM)
         {
-            ManagerVM.GetBookCommand.Execute(bookVM);
+            ManagerVM.GetBookByIdCommand.Execute(bookVM);
             NavigationVM.NavigateToBookDetailCommand.Execute(null);
 
         }
@@ -36,8 +39,6 @@ namespace TP_MVVM.ViewModel
             ManagerVM = managerVM;
             NavigationVM = navigationVM;
 
-            LoadBookAndNavigateCommand = new RelayCommand<BookVM>(LoadBookAndNavigate);
-            NavigateToBackCommand = new RelayCommand(NavigateToBack);
         }
     }
 }

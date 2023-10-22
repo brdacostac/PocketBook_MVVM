@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Model;
-using MyToolKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +13,20 @@ using ViewModelWrapper;
 
 namespace TP_MVVM.ViewModel
 {
-    public class BookDetailPageVM : BaseViewModel
+    public partial class BookDetailPageVM : ObservableObject
     {
-        public ManagerVM ManagerVM { get; private set; }
 
-        public NavigationVM NavigationVM { get; private set; }
+        [ObservableProperty]
+        public ManagerVM managerVM;
+
+
+        [ObservableProperty]
+        public NavigationVM navigationVM;
 
         private string favoriteOptionText ;
 
-        public ICommand AddRemoveFavoritesCommand { get; private set; }
 
-        public ICommand  RemoveBookCommand { get; private set; }
-
-        public ICommand NavigateToBackCommand { get; set; }
-
+        [RelayCommand]
         private void NavigateToBack()
         {
             NavigationVM.NavigateToBackCommand.Execute(null);
@@ -48,7 +49,7 @@ namespace TP_MVVM.ViewModel
             }
         }
 
-
+        [RelayCommand]
         private void AddRemoveFavoritesAndNavigate(BookVM bookVM)
         {
             ManagerVM.CheckIsFavoriteCommand.Execute(bookVM);
@@ -71,13 +72,15 @@ namespace TP_MVVM.ViewModel
             }
         }
 
+        [RelayCommand]
         private void RemoveBookAndNavigate(BookVM bookVM)
         {
             ManagerVM.RemoveBookCommand.Execute(bookVM);
-            ManagerVM.GetBooksCommand.Execute(null);
+            ManagerVM.GetBooksFromCollectionCommand.Execute(null);
             NavigationVM.NavigateToBackCommand.Execute(null);
             
         }
+
 
         public BookDetailPageVM(ManagerVM managerVM, NavigationVM navigationVM)
         {
@@ -85,9 +88,6 @@ namespace TP_MVVM.ViewModel
             ManagerVM = managerVM;
             NavigationVM = navigationVM;
 
-            AddRemoveFavoritesCommand = new RelayCommand<BookVM>((bookVM) => AddRemoveFavoritesAndNavigate(bookVM));
-            RemoveBookCommand = new RelayCommand<BookVM>((bookVM) => RemoveBookAndNavigate(bookVM));
-            NavigateToBackCommand = new RelayCommand(NavigateToBack);
         }
     }
 }

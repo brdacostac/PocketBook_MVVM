@@ -1,28 +1,31 @@
-﻿using MyToolKit;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Windows.Input;
 using ViewModelWrapper;
 
 namespace TP_MVVM.ViewModel
 {
-	public class BookListPageVM : BaseViewModel
+	public partial class BookListPageVM : ObservableObject
 	{
-        public ManagerVM ManagerVM { get; private set; }
-        public NavigationVM NavigationVM { get; private set; }
 
-        public ICommand LoadBookAndNavigateCommand { get; set; }
+        [ObservableProperty]
+        public ManagerVM managerVM;
 
-        public ICommand NavigateToBackCommand { get; set; }
+        [ObservableProperty]
+        public NavigationVM navigationVM;
 
+
+        [RelayCommand]
         private void NavigateToBack()
         {
             NavigationVM.NavigateToBackCommand.Execute(null);
         }
 
-
+        [RelayCommand]
         private void LoadBookAndNavigate(BookVM bookVM)
         {
-            ManagerVM.GetBookCommand.Execute(bookVM);
+            ManagerVM.GetBookByIdCommand.Execute(bookVM);
             NavigationVM.NavigateToBookDetailCommand.Execute(null);
 
         }
@@ -33,9 +36,6 @@ namespace TP_MVVM.ViewModel
         {
             ManagerVM = managerVM;
             NavigationVM = navigationVM;
-
-            LoadBookAndNavigateCommand = new RelayCommand<BookVM>(LoadBookAndNavigate);
-            NavigateToBackCommand = new RelayCommand(NavigateToBack);
 
         }
 

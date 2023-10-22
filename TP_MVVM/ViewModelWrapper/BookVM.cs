@@ -1,6 +1,6 @@
 ﻿using Model;
-using MyToolKit;
 using System;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ViewModelWrapper
 {
-    public class BookVM : BaseViewModel<Book>
+    public class BookVM : ObservableObject
     {
-
+        public Book Model { get; }
         public string Id
         {
             get => Model.Id;
@@ -108,8 +108,8 @@ namespace ViewModelWrapper
 
 
         public BookVM(Book model)
-            : base(model)
         {
+            Model = model;
         }
 
     }

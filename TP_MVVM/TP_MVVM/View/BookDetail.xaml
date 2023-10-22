@@ -158,7 +158,7 @@
 
                 <Grid Grid.Row="8" Margin="0,100,0,0" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
                     <content:buttonOptionsBookDetail  IconPath="heart.png" Title="{Binding BookDetailPageVM.FavoriteButtonText}" 
-                                                      CommandName="{Binding BookDetailPageVM.AddRemoveFavoritesCommand}"
+                                                      CommandName="{Binding BookDetailPageVM.AddRemoveFavoritesAndNavigateCommand}"
                                                       CommandNameParameter="{Binding BookDetailPageVM.ManagerVM.CurrentBook}"/>
                 </Grid>
 
@@ -180,7 +180,7 @@
 
                 <Grid Grid.Row="13" RowDefinitions="Auto, Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10">
                     <content:buttonOptionsBookDetail  Title="Supprimer le livre"
-                                                      CommandName="{Binding BookDetailPageVM.RemoveBookCommand}"
+                                                      CommandName="{Binding BookDetailPageVM.RemoveBookAndNavigateCommand}"
                                                       CommandNameParameter="{Binding BookDetailPageVM.ManagerVM.CurrentBook}"/>
                 </Grid>
 

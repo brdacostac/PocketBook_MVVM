@@ -1,4 +1,6 @@
-﻿using MyToolKit;
+﻿
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +11,21 @@ using ViewModelWrapper;
 
 namespace TP_MVVM.ViewModel
 {
-    public class CustomHeaderPopUpVM : BaseViewModel
+    public partial class CustomHeaderPopUpVM : ObservableObject
     {
-        public ManagerVM ManagerVM { get; set; }
-        public NavigationVM NavigationVM { get; set; }
+        [ObservableProperty]
+        public ManagerVM managerVM;
+
+        [ObservableProperty]
+        public NavigationVM navigationVM;
 
 
-        public ICommand AddBookCommand { get; set; }
 
+        [RelayCommand]
         private void AddBook(string isbn)
         {
             ManagerVM.AddBookCommand.Execute(isbn);
-            ManagerVM.GetBooksCommand.Execute(null);
+            ManagerVM.GetBooksFromCollectionCommand.Execute(null);
             NavigationVM.NavigateToBooksCommand.Execute(null);
         }
         public CustomHeaderPopUpVM(ManagerVM managerVM, NavigationVM navigationVM) 
@@ -28,7 +33,6 @@ namespace TP_MVVM.ViewModel
             ManagerVM = managerVM;
             NavigationVM = navigationVM;
 
-            AddBookCommand = new RelayCommand<string>(AddBook);
         }
     }
 }

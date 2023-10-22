@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Model;
 
 
@@ -9,46 +10,31 @@ namespace ViewModelWrapper
 {
     public partial class ManagerVM : ObservableObject
     {
-
+        [ObservableProperty]
         private int nbPages;
+
+        [ObservableProperty]
         private int index = 1;
+
+        [ObservableProperty]
         private int nbBooks;
+
+        [ObservableProperty]
         private int count = 10;
-        private readonly ObservableCollection<BookVM> books = new();
-        private readonly ObservableCollection<AuthorVM> authors = new();
-        private readonly ObservableCollection<BookVM> favoriteBooks = new();
-        private BookVM book;
+
+        [ObservableProperty]
+        private ObservableCollection<BookVM> books = new();
+
+        [ObservableProperty]
+        private ObservableCollection<AuthorVM> authors = new();
+
+        [ObservableProperty]
+        private ObservableCollection<BookVM> favoriteBooks = new();
+
+        [ObservableProperty]
+        private BookVM currentBook;
+
         private string searchText;
-        private bool isFavorite;
-        public Manager Model { get; }
-        public int Index
-        {
-            get => index;
-            set => SetProperty(ref index, value);
-        }
-
-        public int NbBooks
-        {
-            get => nbBooks;
-            set
-            {
-                SetProperty(ref nbBooks, value);
-                OnPropertyChanged(nameof(nbPages));
-            }
-        }
-
-        public ObservableCollection<BookVM> FavoriteBooks
-        {
-            get => favoriteBooks;
-        }
-
-        public bool IsFavorite
-        {
-            get => isFavorite;
-            set => SetProperty(ref isFavorite, value);
-        }
-
-
         public string SearchText
         {
             get => searchText;
@@ -56,103 +42,30 @@ namespace ViewModelWrapper
             {
                 SetProperty(ref searchText, value);
 
-                // Appel de la methode de recherche lorsque le texte va changer
-                SearchAuthors();
+                // Appel de la commande de recherche lorsque le texte va changer
+                SearchAuthorsCommand.Execute(null);
             }
         }
 
-        public int NbPages
-        {
-            get => nbPages;
-            set => SetProperty(ref nbPages, value);
-        }
+        [ObservableProperty]
+        private bool isFavorite;
 
-        public int Count
-        {
-            get => count;
-            set
-            {
-                SetProperty(ref count, value);
-                OnPropertyChanged(nameof(nbPages));
-            } 
-        }
+        [ObservableProperty]
+        public Manager model;
 
-
-        public ReadOnlyObservableCollection<BookVM> Books
-        {
-            get;
-            set;
-        }
-
-        public ObservableCollection<AuthorVM> Authors
-        {
-            get => authors;
-        }
-
-        public BookVM CurrentBook
-        {
-            get => book;
-            set => SetProperty(ref book, value);
-
-        }
-
-
-
+        [ObservableProperty]
         private IEnumerable<IGrouping<string, BookVM>> groupedBooks;
 
-        public IEnumerable<IGrouping<string, BookVM>> GroupedBooks
+
+
+
+        public ManagerVM(Manager model)
         {
-            get => groupedBooks;
-            set => SetProperty(ref groupedBooks, value);
-        }
-
-        public ICommand GetAuthorsCommand { get; set; }
-
-        public ICommand GetBooksCommand { get; set; }
-
-        public ICommand GetBookCommand { get; set; }
-
-        public ICommand NextPageCommand { get; set; }
-
-        public ICommand PreviousPageCommand { get; set; }
-
-        public ICommand SearchCommand { get; set; }
-
-        public ICommand GetBooksByAuthorCommand { get; set; }
-
-        public ICommand GetFavoriteBooksCommand { get; private set; }
-
-        public ICommand CheckIsFavoriteCommand { get; private set; }
-
-        public ICommand AddFavoritesCommand { get; private set; }
-
-        public ICommand RemoveFavoritesCommand { get; private set; }
-
-        public ICommand RemoveBookCommand { get; private set; }
-
-        public ICommand AddBookCommand { get; private set; }
-
-
-        public ManagerVM(ILibraryManager libraryManager, IUserLibraryManager userLibraryManager)
-        {
-            Model = new Manager(libraryManager, userLibraryManager);
-            Books = new(books);
-            GetBooksCommand = new Command(async () => await GetBooksFromCollection());
-            NextPageCommand = new Command(async () => await NextPage());
-            PreviousPageCommand = new Command(async () => await PreviousPage());
-            GetBookCommand = new Command<BookVM>(async (BookVM currentBook) => await GetBookById(currentBook));
-            GetAuthorsCommand = new Command<string>(async (searchText) => await GetAllAuthors(searchText));
-            SearchCommand = new Command(SearchAuthors);
-            GetBooksByAuthorCommand = new Command<AuthorVM>(async (AuthorVM author) => await GetBooksByAuthor(author));
-            GetFavoriteBooksCommand = new Command(async () => await GetFavoriteBooks());
-            CheckIsFavoriteCommand = new Command<BookVM>(async bookVM => await CheckIsFavorite(bookVM));
-            AddFavoritesCommand = new Command<BookVM>(async bookVM => await AddFavorites(bookVM));
-            RemoveFavoritesCommand = new Command<BookVM>(async bookVM => await RemoveFavorites(bookVM));
-            RemoveBookCommand = new Command<BookVM>(async (bookVM) => await RemoveBook(bookVM));
-            AddBookCommand = new Command<string>(async (isbn) => await AddBook(isbn));
+            Model = model;
 
         }
 
+        [RelayCommand]
         private async Task AddBook(string isbn)
         {
             var book = await Model.GetBookByISBN(isbn);
@@ -162,6 +75,7 @@ namespace ViewModelWrapper
             }
         }
 
+        [RelayCommand]
         private async Task RemoveBook(BookVM bookVM)
         {
             var book = await Model.GetBookById(bookVM.Id);
@@ -169,18 +83,20 @@ namespace ViewModelWrapper
             await GetBooksFromCollection();
         }
 
+        [RelayCommand]
         private async Task GetFavoriteBooks()
         {
             var result = await Model.GetFavoritesBooks(0, 999);
             IEnumerable<Book> allbooks = result.books;
-            books.Clear();
-            favoriteBooks.Clear();
+            Books.Clear();
+            FavoriteBooks.Clear();
             foreach (var book in allbooks.Select(book => new BookVM(book)))
             {
-                favoriteBooks.Add(book);
+                FavoriteBooks.Add(book);
             }
         }
 
+        [RelayCommand]
         private async Task AddFavorites(BookVM bookVM)
         {
             var book = await Model.GetBookById(bookVM.Id);
@@ -188,6 +104,7 @@ namespace ViewModelWrapper
             await GetFavoriteBooks();
         }
 
+        [RelayCommand]
         private async Task RemoveFavorites(BookVM bookVM)
         {
             var book = await Model.GetBookById(bookVM.Id);
@@ -195,7 +112,7 @@ namespace ViewModelWrapper
 
         }
 
-
+        [RelayCommand]
         private async Task CheckIsFavorite(BookVM bookVM)
         {
             await GetFavoriteBooks();
@@ -210,38 +127,41 @@ namespace ViewModelWrapper
             }
         }
 
+        [RelayCommand]
         private async Task GetBooksByAuthor(AuthorVM author)
         {
             var result = await Model.GetBooksByAuthor(author.Name,0,10);
             NbBooks = (int)result.count;
             NbPages = ((NbBooks - 1) / Count) + 1;
-            books.Clear();
+            Books.Clear();
             var booksVM = result.books.Select(book => new BookVM(book));
             foreach (var book in booksVM)
             {
-                books.Add(book);
+                Books.Add(book);
             }
 
             GroupedBooks = Books.GroupBy(b => b.Author).OrderBy(group => group.Key);
         }
 
+        [RelayCommand]
         private async Task GetBooksFromCollection()
         {
             var result = await Model.GetBooksFromCollection(Index -1, Count, "");
             NbBooks = (int)result.count;
             NbPages = ((NbBooks-1)/Count)+1;
-            books.Clear();
+            Books.Clear();
 
             var booksVM = result.books.Select(book => new BookVM(book));
             foreach (var book in booksVM)
             {
-                books.Add(book);
+                Books.Add(book);
             }
 
             GroupedBooks = Books.GroupBy(b => b.Author).OrderBy(group => group.Key);
 
         }
 
+        [RelayCommand]
         private async Task GetBookById(BookVM book)
         {
             var result = await Model.GetBookById(book.Id);
@@ -249,12 +169,13 @@ namespace ViewModelWrapper
 
         }
 
+        [RelayCommand]
         private async Task GetAllAuthors(string searchText)
         {
             var result = await Model.GetBooksFromCollection(0, 999);
             IEnumerable<Book> allbooks = result.books;
-            books.Clear();
-            authors.Clear();
+            Books.Clear();
+            Authors.Clear();
 
             var booksVM = result.books.Select(book => new BookVM(book));
 
@@ -264,7 +185,7 @@ namespace ViewModelWrapper
                 {
                     if (string.IsNullOrEmpty(searchText) || author.Name.Contains(searchText))
                     {
-                        var existingAuthor = authors.FirstOrDefault(a => a.Name == author.Name);
+                        var existingAuthor = Authors.FirstOrDefault(a => a.Name == author.Name);
 
 
                         if (existingAuthor != null)
@@ -274,7 +195,7 @@ namespace ViewModelWrapper
                         }
                         else
                         {
-                            authors.Add(author);
+                            Authors.Add(author);
                             author.NbBooksByAuthor ++;
                         }
                     }
@@ -283,11 +204,13 @@ namespace ViewModelWrapper
 
         }
 
-        private async void SearchAuthors()
+        [RelayCommand]
+        private async Task SearchAuthors()
         {
             await GetAllAuthors(SearchText);
         }
 
+        [RelayCommand]
         public async Task NextPage()
         {
             if(Index != NbPages)
@@ -295,6 +218,7 @@ namespace ViewModelWrapper
             await GetBooksFromCollection();
         }
 
+        [RelayCommand]
         public async Task PreviousPage()
         {
             if(Index != 1)

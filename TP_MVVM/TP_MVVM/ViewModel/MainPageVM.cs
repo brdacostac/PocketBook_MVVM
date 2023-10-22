@@ -1,61 +1,61 @@
 ﻿using Model;
-using MyToolKit;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommunityToolkit.Maui.Views;
-using TP_MVVM.View.Custom;
 using System.Windows.Input;
 using ViewModelWrapper;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace TP_MVVM.ViewModel
 {
-    public class MainPageVM
+    public partial class MainPageVM : ObservableObject
     {
-        public ManagerVM ManagerVM { get; private set; }
-        public NavigationVM NavigationVM { get; private set; }
+        [ObservableProperty]
+        public ManagerVM managerVM;
 
-        public ICommand GetBooksAndNavigateCommand { get; set; }
-
-        public ICommand GetAuthorsAndNavigateCommand { get; set; }
-
-        public ICommand GetFavoritesAndNavigateCommand { get; set; }
-
-        public ICommand NavigateToAddBookCommand { get; set; }
-
-        public ICommand NavigateToDatesCommand { get; set; }
-
-        public ICommand NavigateToEmpruntsCommand { get; set; }
+        [ObservableProperty]
+        public NavigationVM navigationVM;
 
 
+        [RelayCommand]
         private void NavigateToEmprunts()
         {
             NavigationVM.NavigateToEmpruntsCommand.Execute(null);
         }
+
+        [RelayCommand]
         private void NavigateToDates()
         {
             NavigationVM.NavigateToDatesCommand.Execute(null);
         }
+
+        [RelayCommand]
 
         private void NavigateToAddBook()
         {
             NavigationVM.NavigateToAddBookCommand.Execute(null);
         }
 
+        [RelayCommand]
         private void GetBooksAndNavigate()
         {
-            ManagerVM.GetBooksCommand.Execute(null);
+            ManagerVM.GetBooksFromCollectionCommand.Execute(null);
             NavigationVM.NavigateToBooksCommand.Execute(null);
         }
 
+        [RelayCommand]
+
         private void GetAuthorsAndNavigate()
         {
-            ManagerVM.GetAuthorsCommand.Execute(null);
+            ManagerVM.GetAllAuthorsCommand.Execute(null);
             NavigationVM.NavigateToAuthorsCommand.Execute(null);
         }
 
+        [RelayCommand]
         private void GetFavoritesAndNavigate()
         {
             ManagerVM.GetFavoriteBooksCommand.Execute(null);
@@ -69,12 +69,6 @@ namespace TP_MVVM.ViewModel
             ManagerVM = managerVM;
             NavigationVM = navigationVM;
 
-            GetBooksAndNavigateCommand = new RelayCommand(GetBooksAndNavigate);
-            GetAuthorsAndNavigateCommand = new RelayCommand(GetAuthorsAndNavigate);
-            GetFavoritesAndNavigateCommand = new RelayCommand(GetFavoritesAndNavigate);
-            NavigateToAddBookCommand = new RelayCommand(NavigateToAddBook);
-            NavigateToDatesCommand = new RelayCommand(NavigateToDates);
-            NavigateToEmpruntsCommand = new RelayCommand(NavigateToEmprunts);
         }
     }
 }

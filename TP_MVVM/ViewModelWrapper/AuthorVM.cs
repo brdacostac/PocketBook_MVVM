@@ -1,12 +1,13 @@
 ﻿using System;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Model;
-using MyToolKit;
+
 
 namespace ViewModelWrapper
 {
-	public class AuthorVM : BaseViewModel<Author>
+	public class AuthorVM : ObservableObject
 	{
-
+        public Author Model { get; }
         private int nbBooksByAuthor { get; set; }
 
         public int NbBooksByAuthor
@@ -30,8 +31,8 @@ namespace ViewModelWrapper
         }
 
         public AuthorVM(Author model)
-            : base(model)
         {
+            Model = model;
 		}
 	}
 }
