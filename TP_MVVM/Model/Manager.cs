@@ -73,6 +73,11 @@ namespace Model
             return UserLibraryManager.RemoveFromFavorites(id);
         }
 
+        public Task<bool> RemoveBook(Book book)
+        {
+            return UserLibraryManager.RemoveBook(book);
+        }
+
         public async Task<Book> GetBookByIdFromCollection(string id)
 			=> await UserLibraryManager.GetBookById(id);
 

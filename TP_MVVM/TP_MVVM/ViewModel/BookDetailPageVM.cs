@@ -22,6 +22,8 @@ namespace TP_MVVM.ViewModel
 
         public ICommand AddRemoveFavoritesCommand { get; private set; }
 
+        public ICommand  RemoveBookCommand { get; private set; }
+
         public string FavoriteButtonText
         {
             get
@@ -61,6 +63,15 @@ namespace TP_MVVM.ViewModel
                 NavigationVM.NavigateToFavoritesCommand.Execute(null);
             }
         }
+
+        private void RemoveBookAndNavigate(BookVM bookVM)
+        {
+            ManagerVM.RemoveBookCommand.Execute(bookVM);
+            ManagerVM.GetBooksCommand.Execute(null);
+            NavigationVM.NavigateToBackCommand.Execute(null);
+            
+        }
+
         public BookDetailPageVM(ManagerVM managerVM, NavigationVM navigationVM)
         {
 
@@ -68,6 +79,7 @@ namespace TP_MVVM.ViewModel
             NavigationVM = navigationVM;
 
             AddRemoveFavoritesCommand = new RelayCommand<BookVM>((bookVM) => AddRemoveFavoritesAndNavigate(bookVM));
+            RemoveBookCommand = new RelayCommand<BookVM>((bookVM) => RemoveBookAndNavigate(bookVM));
         }
     }
 }
