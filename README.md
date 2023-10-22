@@ -2,6 +2,8 @@
 
 > **ANDROID & IOS**: L'application est fonctionnelle sur Android et sur IOS. 
 
+
+> Branches à noter:
 - Pour accéder au code de l'application et profiter de l'intégralité des fonctionnalités du TP2, veuillez vous rendre sur la branche **TP2**.
 - Pour accéder au code de l'application et profiter de l'intégralité des fonctionnalités du TP3, veuillez vous rendre sur la branche **TP3**.
 
