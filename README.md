@@ -51,11 +51,11 @@ RelayCommand ..|> ICommand
 
 
 **TP2 - MVVM Base** : 
-1. <font color="green"> [x] page d'accueil : en utilisant une _ContentView_ et des _Commands_, faites en sorte que l'utilisateur puisse :
+1. [x] page d'accueil : en utilisant une _ContentView_ et des _Commands_, faites en sorte que l'utilisateur puisse :
       
-2. <font color="green"> [x] affichage des livres de l'utilisateur : afficher tous les livres de l'utilisateur dans la vue _MyList_ et permettre la sélection d'un livre et la navigation vers la page _BookDetail_
+2. [x] affichage des livres de l'utilisateur : afficher tous les livres de l'utilisateur dans la vue _MyList_ et permettre la sélection d'un livre et la navigation vers la page _BookDetail_
   
-3. <font color="green"> [x] filtrage par auteur et par date de publication : afficher dans la vue de filtrage (_FilterPage_)
+3. [x] filtrage par auteur et par date de publication : afficher dans la vue de filtrage (_FilterPage_)
 	Pour des raisons de gestion du temps, j'ai concentré mes efforts que sur la mise en place du filtrage par auteur.
     
   
@@ -63,14 +63,14 @@ RelayCommand ..|> ICommand
 
 L'application doit maintenant permettre de naviguer sur toutes les pages et l'utilisateur doit pouvoir :
 - [ ] changer le statut de lecture d'un livre,
-- <font color="green"> [x] ajouter un livre aux favoris,
-- <font color="green"> [x] filtrer les livres par **Auteur**, **Date de publication**, **Note**
+- [x] ajouter un livre aux favoris,
+- [x] filtrer les livres par **Auteur**, **Date de publication**, **Note**
   **Pour cela j'ai fait seulement le filtrage par auteur pour optimiser le temps.**
-- <font color="green"> [x] ajouter un livre à sa collection en saisissant l'ISBN (les vues seront à ajouter)
-- <font color="green"> [x] supprimer un livre
+- [x] ajouter un livre à sa collection en saisissant l'ISBN (les vues seront à ajouter)
+- [x] supprimer un livre
 - [ ] prêter un livre (et ajouter un contact si besoin)
 - [ ] consulter la liste des livres prêtés. 
-- <font color="green"> [x] Lors de la consultation des livres, il faudra gérer la pagination pour que l'on puisse limiter l'affichage à n (5, 10, 20,...) livres par page.
+- [x] Lors de la consultation des livres, il faudra gérer la pagination pour que l'on puisse limiter l'affichage à n (5, 10, 20,...) livres par page.
   **La pagination est fait pour l'affichage des livres, mais je n'ai pas laissé le choix à l'utilisateur, l'affichage est limité à 10 livres par page.**
 
 **TP3 : utilisation du MVVM Community Toolkit** :
