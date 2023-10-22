@@ -2,16 +2,55 @@
 
 > **ANDROID & IOS**: L'application est fonctionnelle sur Android et sur IOS. 
 
-- Pour accéder au code de l'application ainsi que l'integralité des fonctionnalités du TP2 vous pouvez aller sur la branch TP2
-- Pour accéder au code de l'application ainsi que l'integralité des fonctionnalités du TP3 vous pouvez aller sur la branch TP3
-
-## Fonctionnalités
-
-[x] = Exercice fait
-[ ] = Exercice pas fait
+- Pour accéder au code de l'application ainsi que l'integralité des fonctionnalités du TP2 vous pouvez aller sur la branch **TP2**
+- Pour accéder au code de l'application ainsi que l'integralité des fonctionnalités du TP3 vous pouvez aller sur la branch **TP3**
 
 
-**TP2 - : MVVM Base** : 
+## MyToolKit : 
+  
+Voici la structure de "MyToolKit" :  
+
+```mermaid
+classDiagram
+direction LR
+class INotifyPropertyChanged {
+    <<interface>>
+}
+
+class ObservableObject{
+    +PropertyChanged: event PropertyChangedEventHandler?;
+    #OnPropertyChanged (string PropertyName = null) : void
+    #SetProperty<T> (T member, T value, Action<T> action, string propertyName = null) : void
+    #SetProperty<T> (ref T member, T value, string propertyName = null) : void
+}
+
+class BaseViewModel{
+    +Model: TModel;
+    -model: TModel;
+    +BaseViewModel(TModel model)
+    +BaseViewModel() : this(default)
+}
+
+class ICommand{
+    <<interface>>
+}
+
+class RelayCommand{
+    +CanExecuteChanged: event EventHandler?;
+    +CanExecute (object? parameter) : bool
+    +Execute (object? parameter) : void
+    +RefreshCommand() : void
+} 
+
+ObservableObject ..|> INotifyPropertyChanged
+BaseViewModel --|> ObservableObject
+RelayCommand ..|> ICommand
+```
+
+## Fonctionnalités :
+
+
+**TP2 - MVVM Base** : 
 1. [x] page d'accueil : en utilisant une _ContentView_ et des _Commands_, faites en sorte que l'utilisateur puisse :
       
 2. [x] affichage des livres de l'utilisateur : afficher tous les livres de l'utilisateur dans la vue _MyList_ et permettre la sélection d'un livre et la navigation vers la page _BookDetail_
@@ -20,7 +59,7 @@
 	Pour cela j'ai fait seulement le filtrage par auteur pour optimiser le temps.
     
   
-**TP2 - : MVVM Ajouts** :  
+**TP2 - MVVM Ajouts** :  
 
 L'application doit maintenant permettre de naviguer sur toutes les pages et l'utilisateur doit pouvoir :
 - [ ] changer le statut de lecture d'un livre,
