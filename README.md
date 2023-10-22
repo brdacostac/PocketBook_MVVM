@@ -79,7 +79,8 @@ L'application doit maintenant permettre de naviguer sur toutes les pages et l'ut
   
 _Erreurs rencontrées et remarques_ :
 
-* Sur IOS le compter de livres dans la page Auteurs (filter auteur) ne marche pas, mais sur mon telephone Android ça marche.
+* Sur iOS, le comptage des livres dans la page "Auteurs" (filtrage par auteur) ne fonctionne pas, tandis que sur mon téléphone Android, cela s'effectue correctement.
+* Également sur iOS, étant donné que j'ai implémenté un TapGestureRecognizer sur la grille, il est nécessaire de cliquer légèrement à côté du bouton "+" sur la page principale.
 
 * J'ai supprimé le pop-up qui s'affichait lorsque l'utilisateur cliquait sur le bouton "+" de la page principale fait au TP1. Cela a été fait parce que je ne pouvais pas utiliser mes commandes avec un objet de type PopUp. Désormais, en cliquant sur le bouton "+", vous serez redirigé vers une nouvelle page où vous pourrez ajouter un livre en saisissant son ISBN.
 
